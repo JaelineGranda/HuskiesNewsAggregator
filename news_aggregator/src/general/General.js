@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import '../index.css';
 import Weather from './Weather'
 import TopNewsByCategory from './TopNewsByCategory'
-const newsApiKey = '275258a3655c449ba4907833f5baf08b';
+const newsApiKey = '5c5522179941446d83fbc14fa4781b40';
 const apiMain = 'https://newsapi.org/v1/articles?source=';	
 const apiTail = '&apiKey='
 
@@ -133,6 +133,7 @@ class ArticleTitles extends Component{
 			.then(res => res.json())
 			.then(
 				(data) => {
+					console.log(data);
 					this.setState({
 						articlesArray:this.state.articlesArray.concat(data.articles),
     					article:data.articles[1]

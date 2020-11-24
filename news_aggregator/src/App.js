@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.css';
-
+import './App.css';
 //Routing Links 
 class ToggleRoutes extends React.Component {
     constructor(props) {
