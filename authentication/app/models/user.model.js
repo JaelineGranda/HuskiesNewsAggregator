@@ -13,7 +13,7 @@ const UserSchema = new mongoose.Schema(
         password: {
             type: String
         },
-        roles: [
+        roles: [ // User object will have a roles array that contains ids as reference
             {
               type: mongoose.Schema.Types.ObjectId,
               ref: "Role"
