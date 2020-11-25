@@ -1,20 +1,28 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+import express from 'express'; // for building rest apis
+import bodyParser from 'body-parser'; // parse request
+import cors from "cors"; // provides express middleware
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const app = express();
 
-var app = express();
+var corsOptions = {
+  origin: "http://localhost:8000"
+};
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors(corsOptions));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// parse requests of content-type - application/json
+app.use(bodyParser.json());
 
-module.exports = app;
+// parse requests of content-type - application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// simple route
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome." });
+});
+
+// set port, listen for requests
+const PORT = process.env.PORT || 8001;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
+});
