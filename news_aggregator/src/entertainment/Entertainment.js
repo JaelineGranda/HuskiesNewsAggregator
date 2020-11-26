@@ -23,6 +23,7 @@ const entertainmentAPIKey = '09a731f9f7e9481c9deffbec56d9b6c9';
 
 class ArticleImages extends Component {
     render() {
+       console.log("Hiii");
         //Get and display images, titles, descriptions, authors
         var imageArray = this.props.articles;
         var arrayLengthDividedByFour = Math.floor(imageArray.length / 4);
@@ -260,7 +261,6 @@ class EntertainmentArticles extends Component {
 class Entertainment extends Component {
     render() {
         return (
-
             <EntertainmentArticles />
 
         )
