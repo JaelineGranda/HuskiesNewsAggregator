@@ -3,7 +3,8 @@ import React, { Component } from 'react'
 import '../index.css';
 import Weather from './Weather'
 import TopNewsByCategory from './TopNewsByCategory'
-const newsApiKey = '5c5522179941446d83fbc14fa4781b40';
+// const newsApiKey = '5c5522179941446d83fbc14fa4781b40';
+const newsApiKey = '09a731f9f7e9481c9deffbec56d9b6c9';
 const apiMain = 'https://newsapi.org/v1/articles?source=';	
 const apiTail = '&apiKey='
 
