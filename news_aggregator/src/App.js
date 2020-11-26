@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.css';
-
+import './App.css';
+import {Link,NavLink} from 'react-router-dom'
 //Routing Links 
 class ToggleRoutes extends React.Component {
     constructor(props) {
@@ -13,23 +14,46 @@ class ToggleRoutes extends React.Component {
         this.props.displaySearchedNews(inputValue)
     }
     render(){
-        return(<nav id="main-nav">
-          <div class="container">
-            <img src="img/logo.png" alt="NewsMedia" class="logo"/>
-            <div class = 'social'>
-              <a href="http://facebook.com.br" target = 'blank'>Login</a>
-              <a href="http://twitter.com.br" target = 'blank'>Sign Up</a>
+        return( <div className="container h-1" style={{fontSize:17, fontFamily:'Roboto'}}>
+        <nav className="navbar navbar-inverse navbar-fixed-top h-2" id="nobr" style={{backgroundColor:'#4F4F4F'}}>
+            <div className="container-fluid nobr">
+                <div className="navbar-header hidden-xs">
+                    <a className="navbar-brand" href="#" style={{backgroundColor:'black',color:'white',fontSize:25}}>Upd<span style={{color:'#0099FF'}}>8</span>ed</a>
+                </div>
+                <ul className="nav navbar-nav hidden-sm hidden-xs">
+                    <li><Link  to="/" activeClassName="active">Top News</Link></li>
+                    <li><NavLink to="/entertainment" activeClassName="active">Entertainment</NavLink></li>
+                    <li><Link to="/sports" activeClassName="active">Sports</Link></li>
+                    <li><Link to="/business" activeClassName="active" >Business</Link></li>
+                    <li><Link to="/global" activeClassName="active">World</Link></li>
+                </ul>
+                
+                {/********************** Mobile View *********************/}
+                    <ul className="nav navbar-nav visible-sm visible-xs inline-list">
+                        <li><Link to="/"  activeClassName="activeBorder">
+                            <img alt='a' src={require('./news.png')} style={{marginRight:0,width:30, height:30}}/>
+                        </Link></li>
+                        <li><Link to="/entertainment" activeClassName="activeBorder">
+                        <img alt='a' src={require('./entertainment.png')} style={{marginRight:0,width:30, height:30}}/>
+                        </Link></li>
+                        <li><Link to="/sports" activeClassName="activeBorder"><img alt='a' src={require('./sports.png')} style={{marginRight:0,width:27, height:27}}/>
+                        </Link></li>
+                        <li><Link to="/business" activeClassName="activeBorder"><img alt='a' src={require('./business.png')} style={{marginRight:0,width:30, height:30}}/>
+                        </Link></li>
+                        <li><Link to="/global" activeClassName="activeBorder"><img alt='a' src={require('./world.png')} style={{marginRight:0,width:30, height:30}}/>
+                        </Link></li>
+                    </ul> 
+                {/********************** Mobile View *********************/}
+                
+                {/* search is hidden in mobile */}    
+                <form className="navbar-form h-4 hidden-sm hidden-xs">
+                    <div className="form-group">
+                        <input onChange={this.onInputChangeSaveValue} type="text" className="form-control h-5" placeholder="Search Trending News"/>
+                    </div>
+                </form>
             </div>
-            <ul>
-              <li><a href="index.html" class="current">Top News</a></li>
-              <li><a href="about.html" >Entertaiment</a></li>
-              <li><a href="about.html" >Sports</a></li>
-              <li><a href="about.html" >Business</a></li>
-              <li><a href="about.html" >World</a></li>
-            </ul>
-          </div>
-        </nav>
-        
+        </nav> 
+    </div>
         )
     }
 };
