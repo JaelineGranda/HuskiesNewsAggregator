@@ -6,6 +6,6 @@ exports.allAccess = (req, res) => { // for public access
     res.status(200).send("User Content.");
   };
   
-  exports.adminBoard = (req, res) => { // for adming users
+  exports.adminBoard = (req, res) => { // for admin users
     res.status(200).send("Admin Content.");
   };
