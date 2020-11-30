@@ -27,11 +27,7 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
 
-
-
-
-const app = express();
-app.use(...);
+//app.use(...);
 
 const db = require("./app/models");
 const Role = db.role;
@@ -55,14 +51,6 @@ function initial() {
     if (!err && count === 0) {
       new Role({
         name: "user"
-      }).save(err => {
-        if (err) {
-          console.log("error", err);
-        }
-      });
-
-      new Role({
-        name: "moderator"
       }).save(err => {
         if (err) {
           console.log("error", err);
