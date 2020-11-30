@@ -6,6 +6,7 @@ import bcrypt from 'bcryptjs';
 const User = db.user;
 const Role = db.role;
 
+// creates new user in database
 exports.signup = (req, res) => {
   const user = new User({
     username: req.body.username,
@@ -14,7 +15,7 @@ exports.signup = (req, res) => {
   });
 
   user.save((err, user) => {
-    if (err) {
+    if (err) { // error message
       res.status(500).send({ message: err });
       return;
     }
@@ -36,12 +37,12 @@ exports.signup = (req, res) => {
               res.status(500).send({ message: err });
               return;
             }
-
+            // success message once user is saved
             res.send({ message: "User was registered successfully!" });
           });
         }
       );
-    } else {
+    } else { // if role is not specified, default user role
       Role.findOne({ name: "user" }, (err, role) => {
         if (err) {
           res.status(500).send({ message: err });
@@ -54,7 +55,7 @@ exports.signup = (req, res) => {
             res.status(500).send({ message: err });
             return;
           }
-
+          // success message once user is saved
           res.send({ message: "User was registered successfully!" });
         });
       });
@@ -62,8 +63,9 @@ exports.signup = (req, res) => {
   });
 };
 
+// signin function for user
 exports.signin = (req, res) => {
-  User.findOne({
+  User.findOne({ // searches for username in database
     username: req.body.username
   })
     .populate("roles", "-__v")
@@ -73,22 +75,22 @@ exports.signin = (req, res) => {
         return;
       }
 
-      if (!user) {
+      if (!user) { // error message if username does not exist
         return res.status(404).send({ message: "User Not found." });
       }
-
+  
       var passwordIsValid = bcrypt.compareSync(
         req.body.password,
         user.password
       );
-
+      // denies accesstoken if password is invalid
       if (!passwordIsValid) {
         return res.status(401).send({
           accessToken: null,
           message: "Invalid Password!"
         });
       }
-
+      // generates token using jsonwebtoken
       var token = jwt.sign({ id: user.id }, config.secret, {
         expiresIn: 86400 // 24 hours
       });
@@ -98,6 +100,7 @@ exports.signin = (req, res) => {
       for (let i = 0; i < user.roles.length; i++) {
         authorities.push("ROLE_" + user.roles[i].name.toUpperCase());
       }
+      // returns user information and access token
       res.status(200).send({
         id: user._id,
         username: user.username,
