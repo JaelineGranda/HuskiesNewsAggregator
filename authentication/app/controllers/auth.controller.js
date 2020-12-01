@@ -1,7 +1,7 @@
-import config from '../config/auth.config';
-import db from "../models";
-import jwt from 'jsonwebtoken';
-import bcrypt from 'bcryptjs';
+const config = require("../config/auth.config");
+const db = require("../models");
+var jwt = require("jsonwebtoken");
+var bcrypt = require("bcryptjs");
 
 const User = db.user;
 const Role = db.role;

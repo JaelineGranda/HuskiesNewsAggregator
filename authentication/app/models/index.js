@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
@@ -11,4 +11,4 @@ db.role = require("./role.model");
 
 db.ROLES = ["user", "admin"];
 
-export default db;
+module.exports = db;
