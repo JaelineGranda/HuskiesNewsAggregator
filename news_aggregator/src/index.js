@@ -7,11 +7,13 @@ import General from './general/General.js'
 import Entertainment from './entertainment/Entertainment.js'
 import SearchResults from './search/SearchResults.js'
 
+
 ReactDOM.render(
 	<HashRouter>
 			<Route exact path="/" component={App}/>
 			<Route exact path="/" component={General}/>
 			<Route path="entertainment" component={Entertainment} />
+		
 			<Route path="news-search/:newsToSearchFor" component={SearchResults} />
 	</HashRouter>,	
   document.getElementById('root')
