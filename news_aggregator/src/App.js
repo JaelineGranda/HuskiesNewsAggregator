@@ -1,12 +1,9 @@
 import React from 'react';
 import './index.css';
 import './App.css';
-import "./assets/css/nucleo-icons.css";
 
-import "./assets/demo/demo.css";
 import {Link,NavLink} from 'react-router-dom'
-import PageHeader from './Components/PageHeader/PageHeader.js'
-import IndexNavBar from './Components/Navbars/IndexNavbar.js'
+
 //Routing Links 
 class ToggleRoutes extends React.Component {
     constructor(props) {
