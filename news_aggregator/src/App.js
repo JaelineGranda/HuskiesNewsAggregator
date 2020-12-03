@@ -1,7 +1,9 @@
 import React from 'react';
 import './index.css';
 import './App.css';
+
 import {Link,NavLink} from 'react-router-dom'
+
 //Routing Links 
 class ToggleRoutes extends React.Component {
     constructor(props) {
@@ -15,7 +17,7 @@ class ToggleRoutes extends React.Component {
     }
     render(){
         return( <div className="container h-1" style={{fontSize:17, fontFamily:'Roboto'}}>
-        <nav className="navbar navbar-inverse navbar-fixed-top h-2" id="nobr" style={{backgroundColor:'#4F4F4F'}}>
+        {<nav className="navbar navbar-inverse navbar-fixed-top h-2" id="nobr" style={{backgroundColor:'#4F4F4F'}}>
             <div className="container-fluid nobr">
                 <div className="navbar-header hidden-xs">
                     <a className="navbar-brand" href="#" style={{backgroundColor:'black',color:'white',fontSize:25}}>Upd<span style={{color:'#0099FF'}}>8</span>ed</a>
@@ -31,7 +33,7 @@ class ToggleRoutes extends React.Component {
                 </ul>
                 
                 {/********************** Mobile View *********************/}
-                    <ul className="nav navbar-nav visible-sm visible-xs inline-list">
+                    { <ul className="nav navbar-nav visible-sm visible-xs inline-list">
                         <li><Link to="/"  activeClassName="activeBorder">
                             <img alt='a' src={require('./news.png')} style={{marginRight:0,width:30, height:30}}/>
                         </Link></li>
@@ -44,17 +46,17 @@ class ToggleRoutes extends React.Component {
                         </Link></li>
                         <li><Link to="/global" activeClassName="activeBorder"><img alt='a' src={require('./world.png')} style={{marginRight:0,width:30, height:30}}/>
                         </Link></li>
-                    </ul> 
+                    </ul>  }
                 {/********************** Mobile View *********************/}
                 
-                {/* search is hidden in mobile */}    
-                <form className="navbar-form h-4 hidden-sm hidden-xs">
+                {/*search is hidden in mobile */}    
+                 <form className="navbar-form h-4 hidden-sm hidden-xs">
                     <div className="form-group">
                         <input onChange={this.onInputChangeSaveValue} type="text" className="form-control h-5" placeholder="Search Trending News"/>
                     </div>
                 </form>
             </div>
-        </nav> 
+    </nav> }
     </div>
         )
     }
@@ -81,7 +83,9 @@ class App extends React.Component{
         return(
             <div>
                 <ToggleRoutes displaySearchedNews={this.displaySearchedNews} />
-                <PlaceHolderForNavBar />
+            
+               {/*  <PageHeader/>*/}
+                <PlaceHolderForNavBar /> 
                 {this.props.children}       
             </div>
         );
