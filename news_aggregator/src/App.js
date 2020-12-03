@@ -26,6 +26,8 @@ class ToggleRoutes extends React.Component {
                     <li><Link to="/sports" activeClassName="active">Sports</Link></li>
                     <li><Link to="/business" activeClassName="active" >Business</Link></li>
                     <li><Link to="/global" activeClassName="active">World</Link></li>
+                    <li><Link to="/login" activeClassName="active">Login</Link></li>
+                    <li><Link to="/signup">Signup</Link></li>
                 </ul>
                 
                 {/********************** Mobile View *********************/}
