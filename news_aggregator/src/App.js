@@ -1,96 +1,30 @@
-import React from 'react';
-import './index.css';
-import './App.css';
-
-import {Link,NavLink} from 'react-router-dom'
-
-//Routing Links 
-class ToggleRoutes extends React.Component {
-    constructor(props) {
-        super(props);
-        this.onInputChangeSaveValue = this.onInputChangeSaveValue.bind(this)
-    }
-    onInputChangeSaveValue(e){
-        e.preventDefault();
-        var inputValue = e.target.value
-        this.props.displaySearchedNews(inputValue)
-    }
-    render(){
-        return( <div className="container h-1" style={{fontSize:17, fontFamily:'Roboto'}}>
-        {<nav className="navbar navbar-inverse navbar-fixed-top h-2" id="nobr" style={{backgroundColor:'#4F4F4F'}}>
-            <div className="container-fluid nobr">
-                <div className="navbar-header hidden-xs">
-                    <a className="navbar-brand" href="#" style={{backgroundColor:'black',color:'white',fontSize:25}}>Upd<span style={{color:'#0099FF'}}>8</span>ed</a>
-                </div>
-                <ul className="nav navbar-nav hidden-sm hidden-xs">
-                    <li><Link  to="/" activeClassName="active">Top News</Link></li>
-                    <li><NavLink to="/entertainment" activeClassName="active">Entertainment</NavLink></li>
-                    <li><Link to="/sports" activeClassName="active">Sports</Link></li>
-                    <li><Link to="/business" activeClassName="active" >Business</Link></li>
-                    <li><Link to="/global" activeClassName="active">World</Link></li>
-                    <li><Link to="/login" activeClassName="active">Login</Link></li>
-                    <li><Link to="/signup">Signup</Link></li>
-                </ul>
-                
-                {/********************** Mobile View *********************/}
-                    { <ul className="nav navbar-nav visible-sm visible-xs inline-list">
-                        <li><Link to="/"  activeClassName="activeBorder">
-                            <img alt='a' src={require('./news.png')} style={{marginRight:0,width:30, height:30}}/>
-                        </Link></li>
-                        <li><Link to="/entertainment" activeClassName="activeBorder">
-                        <img alt='a' src={require('./entertainment.png')} style={{marginRight:0,width:30, height:30}}/>
-                        </Link></li>
-                        <li><Link to="/sports" activeClassName="activeBorder"><img alt='a' src={require('./sports.png')} style={{marginRight:0,width:27, height:27}}/>
-                        </Link></li>
-                        <li><Link to="/business" activeClassName="activeBorder"><img alt='a' src={require('./business.png')} style={{marginRight:0,width:30, height:30}}/>
-                        </Link></li>
-                        <li><Link to="/global" activeClassName="activeBorder"><img alt='a' src={require('./world.png')} style={{marginRight:0,width:30, height:30}}/>
-                        </Link></li>
-                    </ul>  }
-                {/********************** Mobile View *********************/}
-                
-                {/*search is hidden in mobile */}    
-                 <form className="navbar-form h-4 hidden-sm hidden-xs">
-                    <div className="form-group">
-                        <input onChange={this.onInputChangeSaveValue} type="text" className="form-control h-5" placeholder="Search Trending News"/>
-                    </div>
-                </form>
-            </div>
-    </nav> }
+import React from "react";
+import "./App.css";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import SingleNews from "./Components/NewsList/SingleNews/SingleNews";
+import Layout from "./Components/Menubar/Layout/Layout"
+import Footer from "./Components/Footer/Footer";
+import NewsList2 from "./Components/NewsList2/NewsList2";
+import Newslist from "./Components/NewsList/Newslist";
+function App() {
+  return (
+    <div className="App">
+      
+      <BrowserRouter basename={'NewsApp-using-React#'}>
+      <Layout/>
+        <Switch>
+        <Route exact path="/NewsApp-using-React/" render={() => (<Redirect to="#/Home" />)} />
+          <Route path="/:category" exact component={NewsList2}></Route>
+          <Route path="/:category/:id" component={SingleNews}></Route>
+        
+        
+          <Route exact path="/" render={() => (<Redirect to="/Home" />)} /> 
+        </Switch>
+       
+      </BrowserRouter>
+      <Footer/>
     </div>
-        )
-    }
-};
-
-//placeholder with hard height needed for indenting fixed nav bar
-function PlaceHolderForNavBar(){
-    return(
-        <div className="place-hold-nav"></div>
-    )
+  );
 }
-
-//parent of all pages, the top navbar stays same and still on all pages
-class App extends React.Component{
-    constructor(props) {
-        super(props);
-        this.displaySearchedNews = this.displaySearchedNews.bind(this)
-    }
-    displaySearchedNews(searchTextFromChild){
-        //routing to searched input
-        this.props.router.push('/news-search/'+ searchTextFromChild)
-    }
-    render(){
-        return(
-            <div>
-                <ToggleRoutes displaySearchedNews={this.displaySearchedNews} />
-            
-               {/*  <PageHeader/>*/}
-                <PlaceHolderForNavBar /> 
-                {this.props.children}       
-            </div>
-        );
-    }
-}
-
 
 export default App;
