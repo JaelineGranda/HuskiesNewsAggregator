@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Raleway:700');
+@import "~bootstrap/scss/bootstrap-grid"; //import from node_modules (using ~ with webpack)
+
+$highlight-color: orange;
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: gray url('./images/background_01.jpg') no-repeat fixed left top;
+  background-size: cover;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+}
+
+a {
+  transition: color 0.1s linear;
+  -o-transition: color 0.1s linear;
+  -moz-transition: color 0.1s linear;
+  -webkit-transition: color 0.1s linear;
+}
+
+#container {
+  padding-top: 40px;
+}
+
+#sidebar {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  color: white;
+}
+
+.nav-item {
+  .nav-link {
+    color: white;
+  }
+
+  .nav-link:hover {
+    color: $highlight-color;
+  }
+
+  .active {
+    color: $highlight-color;
+  }
+}
+
+.article {
+  margin-bottom: 20px;
+  border-color: black;
+  // border-radius: 0;
+
+  .card-body {
+    padding: 10px 15px;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: .9rem;
+    line-height: 1.4;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $highlight-color;
+  }
+}
+
+.card-columns {
+  @include media-breakpoint-up(xs) {
+    column-count: 1;
+  }
+
+  @include media-breakpoint-up(md) {
+    column-count: 2;
+  }
+
+  @include media-breakpoint-up(lg) {
+    column-count: 3;
+  }
+}
+
+#footer {
+  p {
+    padding-top: 20px;
+    color: white;
+    font-size: .9rem;
+    line-height: 1.4;
+  }
+
+  a {
+    color: lightgray;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $highlight-color;
+  }
+}
