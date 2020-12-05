@@ -9,7 +9,8 @@
     color: #000;
 }
 
-.cardhorizontal img {
+.cardhorizontal img
+ {
     width: 250px;
     height: 100%;
 }
