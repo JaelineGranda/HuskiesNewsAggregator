@@ -5,7 +5,7 @@ import classes from './Spinner.module.css';
 const spinner = () => (
     <div className={classes.center}>
     <div className={classes.Spinnerborder}></div>
-    <h2>Loading ...</h2>
+    <h2>Loading...</h2>
 
     </div>
 );

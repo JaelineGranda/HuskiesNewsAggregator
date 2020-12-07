@@ -1,5 +1,7 @@
-import React from 'react'
-import './SocialMedia.css'
+import React from 'react';
+import './SocialMedia.css';
+import {Link} from 'react-router-dom';
+
 
 function SocialMedia() {
     return (
@@ -28,6 +30,14 @@ function SocialMedia() {
                     <i className="fa fa-linkedin"></i>
                     </a>
                 </li>
+
+                <Link to="/signup"><li>
+                    Signup    
+                </li></Link>
+
+                <Link to="/login"><li>
+                    Login    
+                </li></Link>
                
             </ul>
         </>
