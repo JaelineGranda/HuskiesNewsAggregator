@@ -9,6 +9,7 @@ function SocialMedia() {
             <ul className="social">
                 <li>
                     <a  href="https://github.com/mehulk05">
+                        
                     <i className="fa fa-github"></i>
                     </a>
                 </li>

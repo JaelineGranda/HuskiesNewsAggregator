@@ -42,7 +42,7 @@ function Footer() {
             </ul>
         </div>
     </footer>
-    <h5  className="text-center copyright"> © Copyrights reserved by WebHuskies</h5>
+    <h5  className="text-center copyright"> ©Copyrights reserved by WebHuskies</h5>
         </>
     )
 }
