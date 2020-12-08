@@ -7,7 +7,7 @@ export default class Login extends Component {
         return (
             <div  className="login_div">
             <form className="form_div">
-                <h3>Sign In</h3>
+                <h3>Log In</h3>
 
                 <div className="form-group">
                     <label>Email address</label>

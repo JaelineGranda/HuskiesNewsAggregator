@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 .login_div {
-  background-color: lightgreen;
+  background-color: white;
   min-height: 100vh;
   display: flex;
   font-weight: 400;
@@ -13,7 +13,7 @@
 
 .form_div {
   margin: auto;
-  border: 1px solid lightgreen;
+  border: 3px solid #167bff;
   background-color: white;
   border-radius: 25px;
   padding: 8%;
