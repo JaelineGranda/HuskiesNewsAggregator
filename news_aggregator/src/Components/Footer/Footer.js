@@ -35,13 +35,14 @@ function Footer() {
                 <li className="nav-item inline-block"><a href="https://www.instagram.com/mehul_kothari05/" aria-label="Insagram" className="nav-link"><i className="fa fa-instagram"
                         ></i></a>
                 </li>
-                <li className="nav-item inline-block"><a href="https://www.linkedin.com/in/mehul-kothari-765868126/" aria-label="LinkedIn" className="nav-link"><i className="fa fa-linkedin"
+                <li className="nav-item inline-block">
+                    <a href="https://www.linkedin.com/in/mehul-kothari-765868126/" aria-label="LinkedIn" className="nav-link"><i className="fa fa-linkedin"
                         ></i></a>
                 </li>
             </ul>
         </div>
     </footer>
-    <h5  className="text-center copyright"> © Copyrights reserved by Mehul Kothari</h5>
+    <h5  className="text-center copyright"> ©Copyrights reserved by WebHuskies</h5>
         </>
     )
 }

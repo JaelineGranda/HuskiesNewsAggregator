@@ -35,9 +35,7 @@ class Layout extends Component {
                <div className={`hide  container ${classes.nopadd}`}>
                <NavCategory/>
                </div>
-               
-                
-               
+ 
             </>
         )
     }
