@@ -1,15 +1,23 @@
 .fa {
-    font-size: 26px;
+  font-size: 26px;
 }
 
 ul.social {
-    padding-left: 0;
-    margin-top: 5px;
-    margin-bottom: 0;
+  padding-left: 0;
+  margin-top: 5px;
+  margin-bottom: 0;
 }
 
-@media screen and (max-width:550px) {
-    ul.social a {
-        padding: 8px;
-    }
+.button_sign {
+  border: 1px solid white;
+  background-color: white;
+  padding: 5px;
+  margin-right: 5px;
+  color: black;
+}
+
+@media screen and (max-width: 550px) {
+  ul.social a {
+    padding: 8px;
+  }
 }
