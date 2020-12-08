@@ -32,11 +32,11 @@ function SocialMedia() {
                     </a>
                 </li>
 
-                <Link to="/signup"><li>
+                <Link to="/signup" className="button_sign"><li>
                     Signup    
                 </li></Link>
 
-                <Link to="/login"><li>
+                <Link to="/login" className="button_sign"><li>
                     Login    
                 </li></Link>
                

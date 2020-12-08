@@ -14,13 +14,14 @@ function App() {
       
       <BrowserRouter basename={'NewsApp-using-React#'}>
       <Layout/>
-        <Switch>
         
+        <Switch>
+        <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
         <Route exact path="/NewsApp-using-React/" render={() => (<Redirect to="#/Home" />)} />
-          <Route path="/:category" exact component={NewsList2}></Route>
-          <Route path="/:category/:id" component={SingleNews}></Route>
-          <Route exact path="/login" component={Login} />
-          <Route path="/signup" component={Signup} />
+          <Route exact path="/:category" exact component={NewsList2}></Route>
+          <Route exact path="/:category/:id" component={SingleNews}></Route>
+          
         
           <Route exact path="/" render={() => (<Redirect to="/Home" />)} /> 
           
