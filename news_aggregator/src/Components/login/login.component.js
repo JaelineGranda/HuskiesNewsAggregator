@@ -88,7 +88,7 @@ export default class Login extends Component {
       <div className="loginPage">
         <div className="card card-container">
           <img
-            src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+            src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png"
             alt="profile-img"
             className="profile-img-card"
           />
