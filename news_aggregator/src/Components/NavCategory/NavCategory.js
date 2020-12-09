@@ -15,7 +15,7 @@ export class NavCategory extends Component {
         { type: "Entertainment", categoryUrl: "/entertainment/bollywood/feed" },
         { type: "Crime", categoryUrl: "/news/crime/feed" },
         { type: "Sports", categoryUrl: "/sports/feed" },
-        { type: "Buisness", categoryUrl: "/business/feed" },
+        { type: "Business", categoryUrl: "/business/feed" },
         { type: "Health", categoryUrl: "/lifestyle/health/feed" },
         { type: "Technology", categoryUrl: "/technology/feed" },
         { type: "COVID-19", categoryUrl: "/latest-news/covid-19/feed" },
