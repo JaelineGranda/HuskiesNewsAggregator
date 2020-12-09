@@ -16,9 +16,11 @@
         "react-router": "^5.2.0",
         "react-router-dom": "^5.2.0",
         "react-scripts": "^4.0.1",
+        "react-validation": "^3.0.7",
         "react-xml-parser": "^1.1.6",
         "redux": "^4.0.5",
         "redux-thunk": "^2.3.0",
+        "validator": "^13.5.1",
         "xml-js": "^1.6.11"
     },
     "scripts": {
