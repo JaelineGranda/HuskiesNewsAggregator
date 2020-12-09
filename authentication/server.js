@@ -6,7 +6,7 @@ const dbConfig = require("./app/config/db.config");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:8001"
+  origin: "http://localhost:8081"
 };
 
 app.use(cors(corsOptions));
@@ -39,7 +39,7 @@ const db = require("./app/models");
 const Role = db.role;
 
 db.mongoose
-  .connect('mongodb://localhost:27017/users_db', {
+  .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })

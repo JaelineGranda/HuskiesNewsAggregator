@@ -5,6 +5,7 @@ import CheckButton from "react-validation/build/button";
 import "./login.css";
 import AuthService from "../../services/auth.service";
 
+// checks if required value is left blank
 const required = value => {
   if (!value) {
     return (
@@ -22,6 +23,7 @@ export default class Login extends Component {
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
 
+    // state of login component
     this.state = {
       username: "",
       password: "",
@@ -50,8 +52,10 @@ export default class Login extends Component {
       loading: true
     });
 
+    // method to check validation functions
     this.form.validateAll();
 
+    // verifies if form validation is successful or not
     if (this.checkBtn.context._errors.length === 0) {
       AuthService.login(this.state.username, this.state.password).then(
         () => {
@@ -129,7 +133,6 @@ export default class Login extends Component {
                 <span>Login</span>
               </button>
             </div>
-
             {this.state.message && (
               <div className="form-group">
                 <div className="alert alert-danger" role="alert">

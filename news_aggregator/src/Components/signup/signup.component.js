@@ -6,6 +6,7 @@ import { isEmail } from "validator";
 
 import AuthService from "../../services/auth.service.js";
 
+// checks if required value is left blank
 const required = value => {
   if (!value) {
     return (
@@ -16,6 +17,7 @@ const required = value => {
   }
 };
 
+// verifies if email is valid
 const email = value => {
   if (!isEmail(value)) {
     return (
@@ -26,6 +28,7 @@ const email = value => {
   }
 };
 
+// checks if length of username fits constraint
 const vusername = value => {
   if (value.length < 3 || value.length > 20) {
     return (
@@ -36,6 +39,7 @@ const vusername = value => {
   }
 };
 
+// checks if length of password is long enough
 const vpassword = value => {
   if (value.length < 6 || value.length > 40) {
     return (
@@ -54,6 +58,7 @@ export default class Register extends Component {
     this.onChangeEmail = this.onChangeEmail.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
 
+    // state for signup component
     this.state = {
       username: "",
       email: "",
@@ -89,8 +94,10 @@ export default class Register extends Component {
       successful: false
     });
 
+    // method to check validation functions
     this.form.validateAll();
-
+    
+    // verifies if form validation is successful or not
     if (this.checkBtn.context._errors.length === 0) {
       AuthService.register(
         this.state.username,

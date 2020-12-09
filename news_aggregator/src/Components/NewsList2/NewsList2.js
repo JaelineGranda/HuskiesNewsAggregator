@@ -79,7 +79,7 @@ function NewsList2(props) {
         ],
         
       }}
- >
+      >
       <div className={`card ${classes.card}`} style={{}}>
         <div className={classes.cardhorizontal}>
           <div className="img-square-wrapper">
