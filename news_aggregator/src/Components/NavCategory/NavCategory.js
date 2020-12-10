@@ -50,7 +50,7 @@ export class NavCategory extends Component {
       <div>
         <ul className="ullist">{cat}</ul>
 
-        {/* <Newslist selectedCategory={this.state.selectedCategory} /> */}
+        {/* <Newslist selectedCategory={this.state.selectedCategory} /> */}                                          
       </div>
     );
   }
