@@ -7,6 +7,7 @@ import NewsList2 from "./Components/NewsList2/NewsList2";
 import Newslist from "./Components/NewsList/Newslist";
 import Login from './Components/login/login.component';
 import Signup from './Components/signup/signup.component';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -27,8 +28,9 @@ function App() {
           
 
         </Switch>
-       
+        
       </BrowserRouter>
+      <Footer />
       
     </div>
   );
