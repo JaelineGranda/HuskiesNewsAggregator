@@ -9,10 +9,8 @@ ul.social {
 }
 
 .button_sign {
-  border: 1px solid white;
-  background-color: white;
   padding: 5px;
-  margin-right: 5px;
+  margin: 5px;
   color: black;
 }
 
