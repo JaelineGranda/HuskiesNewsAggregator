@@ -7,6 +7,9 @@ import NewsList2 from "./Components/NewsList2/NewsList2";
 import Newslist from "./Components/NewsList/Newslist";
 import Login from './Components/login/login.component';
 import Signup from './Components/signup/signup.component';
+/* import  Nav  from './Components/Nav';
+import  SearchResults  from './Components/search-backup/Search'; */
+import Search from './Components/search/Search';
 
 function App() {
   return (
@@ -16,6 +19,8 @@ function App() {
       <Layout/>
         
         <Switch>
+        
+       <Route exact path="/Search" component={Search} /> 
         <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
         <Route exact path="/NewsApp-using-React/" render={() => (<Redirect to="#/Home" />)} />
