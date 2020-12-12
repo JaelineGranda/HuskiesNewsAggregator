@@ -48,11 +48,9 @@ class Search extends React.Component {
 	fetchSearchResults = ( updatedPageNo = '', query ) => {
 		const pageNumber = updatedPageNo ? `&page=${updatedPageNo}` : '';
 		const searchUrl = `https://pixabay.com/api/?key=PASTE_YOUR_API_KEY_HERE&q=${query}${pageNumber}`;
-
 		if( this.cancel ) {
 			this.cancel.cancel();
 		}
-
 		this.cancel = axios.CancelToken.source();
 
 		axios.get( searchUrl, {
@@ -189,5 +187,4 @@ class Search extends React.Component {
 		)
 	}
 }
-
 export default Search;
