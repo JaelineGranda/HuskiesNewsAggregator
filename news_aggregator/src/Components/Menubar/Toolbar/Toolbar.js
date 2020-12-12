@@ -4,6 +4,7 @@ import classes from './Toolbar.module.css';
 import Logo from '../Logo/Logo';
 
 import DrawerToggle from '../DrawerToggle/DrawerToggle';
+import Nav from '../Nav/index';
 
 import SocialMedia from '../SocialMedia/SocialMedia';
 const toolbar = ( props ) => (
@@ -12,8 +13,9 @@ const toolbar = ( props ) => (
         <div className={classes.Logo}>
             <Logo />
         </div>
+         <nav><Nav/></nav> 
         <nav className={classes.DesktopOnly}>
-                <SocialMedia />
+              <SocialMedia />
         </nav>
     </header>
 );
