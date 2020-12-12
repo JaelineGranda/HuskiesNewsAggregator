@@ -68,6 +68,7 @@ function Newslist(props) {
   // }, [url3]);
  
   useEffect(() => {
+    console.log("useeffect newslist");
     Axios.get(url1)
       .then((data) => {
         setPost(data.data.articles);

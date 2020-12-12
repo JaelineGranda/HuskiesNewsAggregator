@@ -13,12 +13,14 @@ function NewsList2(props) {
   const [loading, setloading] = useState(true);
   const [cat, setCat] = useState(null);
   
-
-  let url1 = `https://cors-anywhere.herokuapp.com/https://www.abplive.com/home/feed`;
+  //9e3efe1aff9f427d96c95814a9b42f6c
+  let url1 = `http://newsapi.org/v2/everything?q=bitcoin&from=2020-11-12&sortBy=publishedAt&apiKey=9e3efe1aff9f427d96c95814a9b42f6c`;
+  //`https://cors-anywhere.herokuapp.com/https://www.abplive.com/home/feed`;
   if (cat === undefined || cat === null) {
-    url1 = `https://cors-anywhere.herokuapp.com/https://www.abplive.com/home/feed`;
+    url1 = `http://newsapi.org/v2/everything?q=bitcoin&from=2020-11-12&sortBy=publishedAt&apiKey=9e3efe1aff9f427d96c95814a9b42f6c`;
   } else {
-    url1 = `https://cors-anywhere.herokuapp.com/https://www.abplive.com${cat}`;
+    url1 = `http://newsapi.org/v2/everything?q=bitcoin&from=2020-11-12&sortBy=publishedAt&apiKey=9e3efe1aff9f427d96c95814a9b42f6c`;
+    //`https://cors-anywhere.herokuapp.com/https://www.abplive.com${cat}`;
   }
 
   useEffect(() => {
@@ -27,40 +29,48 @@ function NewsList2(props) {
   }, [props.location.state]);
 
  
-  useEffect(() => {
+  useEffect(()  => {
      // console.log(props.location.state,url1,cat)
-    Axios.get(url1, {
-      headers: new Headers({
-        Accept: "text/html",
-        "content-type": "application/x-www-form-urlencoded",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, PUT",
-        "Access-Control-Allow-Headers": "Content-Type",
-      }),
-      mode: "no-cors",
-    })
-      .then((d) => {
-        let p = [];
-        var xml = new XMLParser().parseFromString(d.data);
-        let news = xml.children[0].children;
-        for (let i in news) {
-          if (
-            news[i].children !== null &&
-            news[i].children !== [] &&
-            news[i].children.length > 0
-          ) {
-            p.push(news[i].children);
-          }
-        }
-        setPost(p);
 
-        setloading(false);
-      })
-      .catch((e) => {
-        setloading(false);
-        console.log(e);
-        seterr(e);
-      });
+     const fetchAPI = async() => {
+    const data = await Axios.get(url1, {
+      // headers: new Headers({
+      //   Accept: "text/html",
+      //   "content-type": "application/x-www-form-urlencoded",
+      //   "Access-Control-Allow-Origin": "*",
+      //   "Access-Control-Allow-Methods": "GET, POST, PUT",
+      //   //"X-Requested-With": "XMLHttpRequest",
+      //   "Access-Control-Allow-Headers": "X-Requested-With",
+      // }),
+      // mode: "no-cors",
+    })
+    console.log(data.data.articles);
+    setPost(data.data.articles);
+    setloading(false);
+  }
+  fetchAPI();
+      // .then((d) => {
+      //   let p = [];
+      //   var xml = new XMLParser().parseFromString(d.data);
+      //   let news = xml.children[0].children;
+      //   for (let i in news) {
+      //     if (
+      //       news[i].children !== null &&
+      //       news[i].children !== [] &&
+      //       news[i].children.length > 0
+      //     ) {
+      //       p.push(news[i].children);
+      //     }
+      //   }
+      //   setPost(p);
+
+      //   setloading(false);
+      // })
+      // .catch((e) => {
+      //   setloading(false);
+      //   console.log(e);
+      //   seterr(e);
+      // });
   }, [url1]);
 
   let posts = post.map((p, index) => (

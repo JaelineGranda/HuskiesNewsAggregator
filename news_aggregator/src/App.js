@@ -7,13 +7,10 @@ import NewsList2 from "./Components/NewsList2/NewsList2";
 import Newslist from "./Components/NewsList/Newslist";
 import Login from './Components/login/login.component';
 import Signup from './Components/signup/signup.component';
-<<<<<<< HEAD
 /* import  Nav  from './Components/Nav';
 import  SearchResults  from './Components/search-backup/Search'; */
 import Search from './Components/search/Search';
-=======
 import Footer from './Components/Footer/Footer';
->>>>>>> 703785bc0f096c249dc05afe93cae24c6d833f14
 
 function App() {
   return (
