@@ -37,6 +37,7 @@ const App = () => {
             <Route exact path="/weather" component={Weather} />
             <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
+          
             <Route exact path="/" render={() => (<Redirect to="./pages/Home" />)} />
           </Switch>
         </Fragment>
