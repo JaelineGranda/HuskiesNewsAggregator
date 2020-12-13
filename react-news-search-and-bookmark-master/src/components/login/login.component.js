@@ -96,7 +96,7 @@ export default class Login extends Component {
             onSubmit={this.handleLogin}
             ref={c => {
               this.form = c;
-            }}
+            }} class="loginForm"
           >
             <div className="form-group">
               <label htmlFor="username">Username</label>

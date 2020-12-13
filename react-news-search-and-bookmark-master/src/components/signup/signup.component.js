@@ -141,7 +141,7 @@ export default class Register extends Component {
             onSubmit={this.handleRegister}
             ref={c => {
               this.form = c;
-            }}
+            }} class="loginForm"
           >
             {!this.state.successful && (
               <div>

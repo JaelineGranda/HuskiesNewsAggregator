@@ -5,15 +5,20 @@ import Container from 'react-bootstrap/Container';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { changeTheme } from '../actions/news';
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import Signup from './../components/signup/signup.component';
-import Login from './../components/login/login.component';
+import AuthService from "../services/auth.service";
 
+const logout = () => {
+  debugger;
+  AuthService.logout();
+  window.location.reload(false);
+}
 const TopNav = ({ news, changeTheme }) => {
   return (
     <Navbar collapseOnSelect expand='lg' bg={news.theme} variant={news.theme}>
       <Container>
-        <Navbar.Brand href='/'>React News Search & Bookmark</Navbar.Brand>
+        {!localStorage.getItem('user') ?
+          <Navbar.Brand href='/'>Welcome Guest!</Navbar.Brand> :
+          <Navbar.Brand href='/'>Welcome {JSON.parse(localStorage.getItem("user")).username}!</Navbar.Brand>}
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
           <Nav className='ml-auto'>
@@ -34,10 +39,12 @@ const TopNav = ({ news, changeTheme }) => {
             <Nav.Link to="/signup" activeClassName='active' as={NavLink} className="button_sign"><li>
               Sign Up
                 </li></Nav.Link>
-
-            <Nav.Link to="/login" activeClassName='active' as={NavLink} className="button_sign"><li>
-              Login
-                </li></Nav.Link>
+            {!localStorage.getItem('user') ?
+              <Nav.Link to="/login" activeClassName='active' as={NavLink} className="button_sign"><li>
+                Login
+                </li></Nav.Link> : <Nav.Link to="/" onClick={logout} activeClassName='active' as={NavLink} className="button_sign"><li>
+                Logout
+                </li></Nav.Link>}
             <Nav.Link>
               <div
                 onClick={() =>
