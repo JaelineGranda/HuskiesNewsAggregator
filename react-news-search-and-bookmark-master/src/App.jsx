@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 
 // React Router Dom
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Signup from './components/signup/signup.component';
 import Login from './components/login/login.component';
 // Redux Store
@@ -32,7 +32,7 @@ const App = () => {
             <Route path='/bookmarks' exact component={Bookmarks} />
             <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
-            <Route component={PageNotFound} />
+            <Route exact path="/" render={() => (<Redirect to="./pages/Home" />)} />
           </Switch>
         </Fragment>
       </Router>
