@@ -32,7 +32,7 @@ const App = () => {
           <TopNav />
           <Switch>
             <Route path='/' exact component={Home} />
-         <Stocks></Stocks>
+            <Route path='/stocks' exact component={Stocks} />
             <Route path='/bookmarks' exact component={Bookmarks} />
             <Route exact path="/weather" component={Weather} />
             <Route exact path="/login" component={Login} />
