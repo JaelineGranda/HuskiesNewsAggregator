@@ -93,6 +93,9 @@ export default class Stock extends React.Component {
             </div>
             <div className="text-center">
             <h4><a href={"http://eoddata.com/symbols.aspx"} target='blank'>Click here to view more stock symbols</a></h4></div>
+           
+          
+            <div className="card card-body bg-secondary">
             <div className="d-flex justify-content-center">
             <Plot 
               data={[
@@ -106,6 +109,7 @@ export default class Stock extends React.Component {
               ]}
               layout={{ width: 720, height: 440, title: "Stock market Plot" }}
               />
+            </div>
             </div>
           </div>
         </div>
