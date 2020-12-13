@@ -26,7 +26,7 @@ const Home = ({ setTopNews, news, clearTopNews }) => {
     }
 
     if(!categorySourceUrl) {
-      let url1 = `http://newsapi.org/v2/everything?q=bitcoin&from=2020-11-12&sortBy=publishedAt&apiKey=9e3efe1aff9f427d96c95814a9b42f6c`;
+      let url1 = `http://newsapi.org/v2/everything?q=bitcoin&sortBy=publishedAt&apiKey=5c5522179941446d83fbc14fa4781b40`;
       setTopNews(url1,page);
     }
 
