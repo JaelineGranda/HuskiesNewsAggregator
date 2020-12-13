@@ -8,13 +8,20 @@ import { connect } from 'react-redux';
 import { bookmarkItem, unBookmarkItem } from '../actions/bookmarks';
 import { FaRegBookmark, FaBookmark } from 'react-icons/fa';
 import NewsDefaultImage from './news-default-image.jpg';
+import { TwitterShareButton, TwitterIcon } from "react-share";
+import { FacebookShareButton, FacebookIcon } from "react-share";
+import { RedditShareButton, RedditIcon  } from "react-share";
+import { EmailShareButton, EmailShareIcon } from "react-share";
+import { PinterestShareButton, PinterestIcon} from "react-share";
+
 
 const NewsItem = ({
   item,
   theme,
   bookmarkItem,
   unBookmarkItem,
-  bookmarkItems
+  bookmarkItems,
+  facebook
 }) => {
   const isBookmark = item => {
     if (bookmarkItems !== null) {
@@ -29,7 +36,11 @@ const NewsItem = ({
 
   const unBookmark = item => {
     unBookmarkItem(item);
+
+
   };
+
+  
 
   return (
     <Col xs={12} sm={6} md={6} lg={4} xl={4} className='my-2'>
@@ -81,6 +92,23 @@ const NewsItem = ({
         <Card.Footer>
           <small className='text-muted'>
             Published: <Moment format='YYYY/MM/DD' date={item.publishedAt} />
+            <br>
+            </br>
+            < FacebookShareButton url={item.url}>
+              <FacebookIcon logoFillColor="white" size ={33} round/>
+                </FacebookShareButton>
+                < TwitterShareButton url={item.url}>
+              <TwitterIcon logoFillColor="white" size ={33} round />
+                </TwitterShareButton>
+                < RedditShareButton url={item.url}>
+              <RedditIcon logoFillColor="white" size ={33} round/>
+                </ RedditShareButton>
+                < PinterestShareButton url={item.url}>
+              <PinterestIcon logoFillColor="white" size ={33} round/>
+                </ PinterestShareButton>
+                {/* < EmailShareButton url={item.url}>
+              <EmailShareIcon logoFillColor="white" size ={33} round/>
+                </ EmailShareButton> */}
           </small>
         </Card.Footer>
       </Card>
