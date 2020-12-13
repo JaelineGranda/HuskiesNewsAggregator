@@ -16,6 +16,8 @@ import PageNotFound from './pages/PageNotFound';
 import TopNav from './layout/TopNav';
 import { getNewsSource, setTheme } from './actions/news';
 import { getBookmarkItems } from './actions/bookmarks';
+import  Stocks from './pages/Stock';
+
 const App = () => {
   useEffect(() => {
     store.dispatch(getNewsSource());
@@ -29,6 +31,7 @@ const App = () => {
           <TopNav />
           <Switch>
             <Route path='/' exact component={Home} />
+         <Stocks></Stocks>
             <Route path='/bookmarks' exact component={Bookmarks} />
             <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
