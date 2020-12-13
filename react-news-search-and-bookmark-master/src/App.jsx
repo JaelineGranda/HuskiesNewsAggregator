@@ -4,6 +4,7 @@ import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Signup from './components/signup/signup.component';
 import Login from './components/login/login.component';
+import Weather from './components/weather/weather.component';
 // Redux Store
 import { Provider } from 'react-redux';
 import store from './store';
@@ -33,6 +34,7 @@ const App = () => {
             <Route path='/' exact component={Home} />
          <Stocks></Stocks>
             <Route path='/bookmarks' exact component={Bookmarks} />
+            <Route exact path="/weather" component={Weather} />
             <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
             <Route exact path="/" render={() => (<Redirect to="./pages/Home" />)} />

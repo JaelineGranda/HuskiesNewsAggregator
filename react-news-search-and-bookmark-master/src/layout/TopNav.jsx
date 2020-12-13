@@ -20,18 +20,23 @@ const TopNav = ({ news, changeTheme }) => {
             <Nav.Link activeClassName='active' exact as={NavLink} to='/'>
               Top News
             </Nav.Link>
+
             <Nav.Link activeClassName='active' as={NavLink} to='/Stocks'>
               Stocks
+              </Nav.Link>
+            <Nav.Link activeClassName='active' as={NavLink} to='/weather'>
+              Weather
+
             </Nav.Link>
             <Nav.Link activeClassName='active' as={NavLink} to='/bookmarks'>
               Bookmarks
             </Nav.Link>
             <Nav.Link to="/signup" activeClassName='active' as={NavLink} className="button_sign"><li>
-                    Sign Up
+              Sign Up
                 </li></Nav.Link>
 
-                <Nav.Link to="/login" activeClassName='active' as={NavLink} className="button_sign"><li>
-                Login
+            <Nav.Link to="/login" activeClassName='active' as={NavLink} className="button_sign"><li>
+              Login
                 </li></Nav.Link>
             <Nav.Link>
               <div
