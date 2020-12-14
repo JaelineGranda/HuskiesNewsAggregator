@@ -1,71 +1,121 @@
-import React from 'react';
-import Plot from 'react-plotly.js';
+import React from "react";
+import Plot from "react-plotly.js";
 
-class Stock extends React.Component {
+export default class Stock extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       stockChartXValues: [],
-      stockChartYValues: []
-    }
+      stockChartYValues: [],
+      stockSymbol: "AMZN",
+    };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
     this.fetchStock();
   }
 
+  handleClick() {
+    this.fetchStock();
+  }
+
   fetchStock() {
     const pointerToThis = this;
-    console.log(pointerToThis);
-    const API_KEY = 'HGJWFG4N8AQ66ICD';
-    let StockSymbol = 'FB';
-    let API_Call = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${StockSymbol}&outputsize=compact&apikey=${API_KEY}`;
+    const API_KEY = "SLIIE11N2DCT0QUM";
+    //let StockSymbol = "AMZN";
+    let API_Call = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${this.state.stockSymbol}&outputsize=compact&apikey=${API_KEY}`;
     let stockChartXValuesFunction = [];
     let stockChartYValuesFunction = [];
-
     fetch(API_Call)
-      .then(
-        function(response) {
-          return response.json();
-        }
-      )
-      .then(
-        function(data) {
-          console.log(data);
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        //console.log(data);
 
-          for (var key in data['Time Series (Daily)']) {
-            stockChartXValuesFunction.push(key);
-            stockChartYValuesFunction.push(data['Time Series (Daily)'][key]['1. open']);
-          }
-
-          // console.log(stockChartXValuesFunction);
-          pointerToThis.setState({
-            stockChartXValues: stockChartXValuesFunction,
-            stockChartYValues: stockChartYValuesFunction
-          });
+        for (var key in data["Time Series (Daily)"]) {
+          stockChartXValuesFunction.push(key);
+          stockChartYValuesFunction.push(
+            data["Time Series (Daily)"][key]["1. open"]
+          );
         }
-      )
+
+        //console.log(stockChartYValuesFunction);
+        pointerToThis.setState({
+          stockChartXValues: stockChartXValuesFunction,
+          stockChartYValues: stockChartYValuesFunction,
+        });
+      });
   }
 
   render() {
     return (
-      <div>
-        <h1>Stock Market</h1>
-        <Plot
-          data={[
-            {
-              x: this.state.stockChartXValues,
-              y: this.state.stockChartYValues,
-              type: 'scatter',
-              mode: 'lines+markers',
-              marker: {color: 'red'},
-            }
-          ]}
-          layout={{width: 720, height: 440, title: 'A Fancy Plot'}}
-        />
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col">
+            <div class="d-flex flex-column mt-3">
+              <div class="bg-primary">
+                <div class="card-body bg-primary text-white text-center">
+                  <h1 className="text-white"><strong> Stock Market for {this.state.stockSymbol}</strong></h1>
+                </div>
+              </div>
+            
+            <div className="border border-primary p-2">
+              <div className="d-flex flex-row justify-content-center">
+                <form className="form-inline py-2">
+                  <div className="form-group">
+                    <h3>
+                    <div className="text-center">
+                      <div className="row">
+                        <label className="text-secondary">Company Name: </label>
+
+                        <div className="col-md-6">
+                          <div className="input-group">
+
+                            <input type="text" className="form-control" placeholder="Search..." onChange={(e) => this.setState({ stockSymbol: e.target.value })} ></input>
+                            <div className="input-group-append">
+                              <button type="button" class="btn btn-secondary" onClick={this.handleClick}>Search
+                               <i className="fa fa-search"></i>
+                              </button>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </div>
+
+</div>
+                    </h3>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div className="text-center">
+            <h4><a href={"http://eoddata.com/symbols.aspx"} target='blank'>Click here to view more stock symbols</a></h4></div>
+           
+          
+            <div className="card card-body bg-secondary">
+            <div className="d-flex justify-content-center">
+            <Plot 
+              data={[
+                {
+                  x: this.state.stockChartXValues,
+                  y: this.state.stockChartYValues,
+                  type: "scatter",
+                  mode: "lines+markers",
+                  marker: { color: "red" },
+                },
+              ]}
+              layout={{ width: 720, height: 440, title: "Stock market Plot" }}
+              />
+            </div>
+            </div>
+          </div>
+        </div>
+      </div >
       </div>
-    )
+
+    );
   }
 }
-
-export default Stock;
