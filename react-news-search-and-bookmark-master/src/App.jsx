@@ -13,7 +13,6 @@ import store from './store';
 // Pages
 import Home from './pages/Home';
 import Bookmarks from './pages/Bookmarks';
-import PageNotFound from './pages/PageNotFound';
 
 import TopNav from './layout/TopNav';
 import { getNewsSource, setTheme } from './actions/news';
@@ -38,7 +37,7 @@ const App = () => {
             <Route exact path="/weather" component={Weather} />
             <Route exact path="/preference" component={Preference} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/signup" component={Signup} />
+          <Route exact path="/signup" component={Signup} />          
             <Route exact path="/" render={() => (<Redirect to="./pages/Home" />)} />
           </Switch>
         </Fragment>
