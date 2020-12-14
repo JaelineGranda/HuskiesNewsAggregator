@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { changeTheme } from '../actions/news';
 import AuthService from "../services/auth.service";
+import './TopNav.css';
 
 const logout = () => {
   debugger;
@@ -19,6 +20,9 @@ const TopNav = ({ news, changeTheme }) => {
         {!localStorage.getItem('user') ?
           <Navbar.Brand href='/'>Welcome Guest!</Navbar.Brand> :
           <Navbar.Brand href='/'>Welcome {JSON.parse(localStorage.getItem("user")).username}!</Navbar.Brand>}
+          <div className="dateTime">
+              {Date().toLocaleString()}
+          </div>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
           <Nav className='ml-auto'>
