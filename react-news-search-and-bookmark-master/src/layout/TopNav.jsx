@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { changeTheme } from '../actions/news';
 import AuthService from "../services/auth.service";
+import './TopNav.css';
 
 const logout = () => {
   debugger;
@@ -19,6 +20,9 @@ const TopNav = ({ news, changeTheme }) => {
         {!localStorage.getItem('user') ?
           <Navbar.Brand href='/'>Welcome Guest!</Navbar.Brand> :
           <Navbar.Brand href='/'>Welcome {JSON.parse(localStorage.getItem("user")).username}!</Navbar.Brand>}
+          <span className="dateTime">
+              {Date().toLocaleString()}
+          </span>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
           <Nav className='ml-auto'>
@@ -36,13 +40,15 @@ const TopNav = ({ news, changeTheme }) => {
             <Nav.Link activeClassName='active' as={NavLink} to='/bookmarks'>
               Bookmarks
             </Nav.Link>
+            {!localStorage.getItem('user') ?
             <Nav.Link to="/signup" activeClassName='active' as={NavLink} className="button_sign"><li>
               Sign Up
-                </li></Nav.Link>
+                </li></Nav.Link>:null}
             {!localStorage.getItem('user') ?
               <Nav.Link to="/login" activeClassName='active' as={NavLink} className="button_sign"><li>
                 Login
-                </li></Nav.Link> : <Nav.Link to="/" onClick={logout} activeClassName='active' as={NavLink} className="button_sign"><li>
+                </li></Nav.Link> : 
+                <Nav.Link to="/" onClick={logout} activeClassName='active' as={NavLink} className="button_sign"><li>
                 Logout
                 </li></Nav.Link>}
             <Nav.Link>

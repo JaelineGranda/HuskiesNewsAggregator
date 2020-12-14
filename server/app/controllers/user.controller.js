@@ -1,4 +1,4 @@
-exports.allAccess = (req, res) => { // for public access
+  exports.allAccess = (req, res) => { // for public access
     res.status(200).send("Public Content.");
   };
   
@@ -9,3 +9,7 @@ exports.allAccess = (req, res) => { // for public access
   exports.adminBoard = (req, res) => { // for admin users
     res.status(200).send("Admin Content.");
   };
+
+ // exports.getUsers = (req, res) => {
+  //  res.json(users);
+  //};

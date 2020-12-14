@@ -15,10 +15,12 @@ const User = mongoose.model(
       type: Array,
       default: ["Business", "Entertainment", "General", "Health", "Science", "Sports", "Technology"]
     },
-    bookmarks: {
-      type: Array,
-      default: []
-    }
+    roles: [ // User object will have a roles array that contains ids as reference
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Role"
+      }
+    ]
   })
 );
 
