@@ -4,6 +4,7 @@ import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import "./login.css";
 import AuthService from "../../services/auth.service";
+import { FaTeeth } from "react-icons/fa";
 
 // checks if required value is left blank
 const required = value => {
@@ -59,7 +60,12 @@ export default class Login extends Component {
     if (this.checkBtn.context._errors.length === 0) {
       AuthService.login(this.state.username, this.state.password).then(
         () => {
+          fetch("http://localhost:8001/api/user/getPreferences?id=" + JSON.parse(localStorage.getItem("user")).id).then((results) => { return results.json() }).then((results) => localStorage.setItem("userCat",results.categories))
+          fetch("http://localhost:8001/api/user/getPreferences?id=" + JSON.parse(localStorage.getItem("user")).id).then((results) => { return results.json() }).then((results) => localStorage.setItem("userCntry",results.countries))
+          fetch("http://localhost:8001/api/user/getPreferences?id=" + JSON.parse(localStorage.getItem("user")).id).then((results) => { return results.json() }).then((results) => localStorage.setItem("bookmarks",results.bookmarks))
+          // localStorage.setItem("userCat",fetch("http://localhost:8001/api/user/getPreferences?id="+JSON.parse(localStorage.getItem("user")).id).then((results) => { return results.json() })).then((results) => {return results;})
           this.props.history.push("/");
+
           window.location.reload();
         },
         error => {
@@ -81,6 +87,9 @@ export default class Login extends Component {
         loading: false
       });
     }
+
+
+    
   }
 
   render() {

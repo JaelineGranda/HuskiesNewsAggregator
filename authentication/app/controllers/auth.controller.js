@@ -2,9 +2,43 @@ const config = require("../config/auth.config");
 const db = require("../models");
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
+const { user } = require("../models");
 
 const User = db.user;
 const Role = db.role;
+
+
+exports.getPref = (req, res) => {
+  var id = req.query.id
+  debugger;
+  console.log(id)
+  return User.findById(id).exec().then(data => {
+    if (!data) {
+      res.status(404).send({
+        message: `Cannot update Tutorial with id=${id}. Maybe Tutorial was not found!`
+      });
+    } else res.send(data);
+
+  })
+}
+
+exports.update = (req, res) => {
+  var id = req.body.id;
+  // console.log(id)
+  User.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+    .then(data => {
+      if (!data) {
+        res.status(404).send({
+          message: `Cannot update User with id=${id}. Maybe User was not found!`
+        });
+      } else res.send({ message: "User was updated successfully." });
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error updating User with id=" + id
+      });
+    });
+}
 
 // creates new user in database
 exports.signup = (req, res) => {
@@ -78,7 +112,7 @@ exports.signin = (req, res) => {
       if (!user) { // error message if username does not exist
         return res.status(404).send({ message: "User Not found." });
       }
-  
+
       var passwordIsValid = bcrypt.compareSync(
         req.body.password,
         user.password
@@ -94,19 +128,26 @@ exports.signin = (req, res) => {
       var token = jwt.sign({ id: user.id }, config.secret, {
         expiresIn: 86400 // 24 hours
       });
-
-      var authorities = [];
-
-      for (let i = 0; i < user.roles.length; i++) {
-        authorities.push("ROLE_" + user.roles[i].name.toUpperCase());
-      }
       // returns user information and access token
       res.status(200).send({
         id: user._id,
         username: user.username,
         email: user.email,
-        roles: authorities,
         accessToken: token
       });
     });
 };
+
+exports.delete = (req, res) => {
+  User.findByIdAndRemove(req.query.id).then((data) => {
+    if (!data) {
+      res.status(404).send({
+        message: `Cannot delete User with id=${req.query.id}. Maybe Tutorial was not found!`
+      });
+    } else {
+      res.send({
+        message: "User was deleted successfully!"
+      });
+    }
+  })
+}
