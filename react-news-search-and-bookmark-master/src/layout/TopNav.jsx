@@ -8,6 +8,10 @@ import { changeTheme } from '../actions/news';
 import AuthService from "../services/auth.service";
 import './TopNav.css';
 
+var today = new Date(),
+
+date = (today.getMonth() + 1) + '-' + today.getDate() + '-' + today.getFullYear();
+
 const logout = () => {
   debugger;
   AuthService.logout();
@@ -22,7 +26,7 @@ const TopNav = ({ news, changeTheme }) => {
           <Navbar.Brand href='/'>Welcome Guest!</Navbar.Brand> :
           <Navbar.Brand href='/'>Welcome {JSON.parse(localStorage.getItem("user")).username}!</Navbar.Brand>}
           <span className="dateTime">
-              {Date().toLocaleString()}
+          {date}
           </span>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
