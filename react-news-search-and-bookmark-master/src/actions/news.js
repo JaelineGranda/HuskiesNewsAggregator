@@ -14,9 +14,9 @@ import {
 let newsApiKey;
 
 if (process.env.NODE_ENV !== 'production') {
-  newsApiKey = "afbc440a2ed6400d8a7a875b87ba539c";
+  newsApiKey = "2074f3fdd61247d89814daa1745d49b5";
 } else {
-  newsApiKey = "afbc440a2ed6400d8a7a875b87ba539c";
+  newsApiKey = "2074f3fdd61247d89814daa1745d49b5";
 }
 
 // Set Theme
