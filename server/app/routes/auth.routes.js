@@ -20,6 +20,12 @@ module.exports = function(app) {
     ],
     controller.signup
   );
+  
+app.get("/api/user/getPreferences",controller.getPref);
+
+  app.delete("/api/user/delete",controller.delete);
+  
+  app.put("/api/user/update",controller.update);
 
   app.post("/api/auth/signin", controller.signin);
 };

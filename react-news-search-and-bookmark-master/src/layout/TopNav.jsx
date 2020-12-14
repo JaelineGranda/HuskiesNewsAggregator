@@ -11,8 +11,9 @@ import './TopNav.css';
 const logout = () => {
   debugger;
   AuthService.logout();
-  window.location.reload(false);
+  window.location.replace("/");
 }
+console.log(localStorage.getItem("user"));
 const TopNav = ({ news, changeTheme }) => {
   return (
     <Navbar collapseOnSelect expand='lg' bg={news.theme} variant={news.theme}>
@@ -35,15 +36,18 @@ const TopNav = ({ news, changeTheme }) => {
               </Nav.Link>
             <Nav.Link activeClassName='active' as={NavLink} to='/weather'>
               Weather
-
             </Nav.Link>
             <Nav.Link activeClassName='active' as={NavLink} to='/bookmarks'>
               Bookmarks
             </Nav.Link>
+            {localStorage.getItem('user') ?
+            <Nav.Link activeClassName='active' as={NavLink} to='/preference'>
+              Settings
+            </Nav.Link> : ""}
             {!localStorage.getItem('user') ?
             <Nav.Link to="/signup" activeClassName='active' as={NavLink} className="button_sign"><li>
               Sign Up
-                </li></Nav.Link>:null}
+                </li></Nav.Link> : ""}
             {!localStorage.getItem('user') ?
               <Nav.Link to="/login" activeClassName='active' as={NavLink} className="button_sign"><li>
                 Login

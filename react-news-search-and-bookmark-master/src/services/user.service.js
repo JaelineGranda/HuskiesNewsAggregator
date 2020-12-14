@@ -8,6 +8,10 @@ class UserService {
     return axios.get(apiurl + 'all');
   }
 
+  updateUser(id,prefArray){
+    return axios.put("http://localhost:8001/api/user/update",{"id":id,"preferences":prefArray})
+  }
+
   getUserBoard() {
     return axios.get(apiurl + 'user', { headers: authHeader() });
   }

@@ -20,6 +20,7 @@ class AuthService {
   // when logging out removes jwt from local storage
   logout() {
     localStorage.removeItem("user");
+    localStorage.removeItem('bookmarks');
   }
   // post username email and password after registering account
   register(username, email, password) {
