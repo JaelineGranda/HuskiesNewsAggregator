@@ -29,6 +29,8 @@ const Bookmarks = ({ bookmarkItems, theme }) => {
             </p>
           </Col>
         </Row>
+      </Container>
+      <Container>
         <Row className='justify-content-md-center mb-4 pb-4'>
           {bookmarkItems.map((item, i) => (
             <NewsItem key={i} item={item} theme={theme} />
