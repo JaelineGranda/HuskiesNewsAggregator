@@ -4076,7 +4076,7 @@ input[type="button"].btn-block {
 }
 
 .navbar {
-  position: relative;
+  position: sticky;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -4411,7 +4411,7 @@ input[type="button"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #e1e1e1;
+  background-color: lightslategray;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
@@ -9940,7 +9940,7 @@ a.text-dark:focus {
 }
 
 .text-muted {
-  color: #6c757d !important;
+  color: white !important;
 }
 
 .text-black-50 {
