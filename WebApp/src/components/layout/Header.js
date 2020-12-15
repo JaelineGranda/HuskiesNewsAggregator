@@ -10,17 +10,17 @@ const Header = () => {
         const { city, country, error, loading } = value;
 
         return (
-          <div className="bg-primary">
+          <div className="">
             <div
               className={classnames(
-                'card-body bg-primary text-white text-center',
+                'card-body text-white text-center',
                 { 'bg-danger': error }
               )}
             >
               {loading ? (
                 <Spinner color="text-white" />
               ) : (
-                <h1 className="display-4" style={{ fontSize: '36px' }}>
+                <h1 className="display-4 text-white" >
                   <strong>
                     {city ? `${city}, ${country}` : 'Weather Conditions'}
                   </strong>

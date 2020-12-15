@@ -9,10 +9,19 @@ import AuthService from "../services/auth.service";
 import './TopNav.css';
 
 const logout = () => {
-  debugger;
   AuthService.logout();
-  window.location.reload(false);
+  window.location.replace("/");
 }
+
+
+var today = new Date(),
+month = today.getMonth();
+var months = ["Jan", "Feb", "Mar", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
+var setMonth = months[month]
+
+const date = (setMonth) + ' ' + today.getDate() + ', ' + today.getFullYear();
+
+
 const TopNav = ({ news, changeTheme }) => {
   return (
     <Navbar collapseOnSelect expand='lg' bg={news.theme} variant={news.theme}>
@@ -21,7 +30,7 @@ const TopNav = ({ news, changeTheme }) => {
           <Navbar.Brand href='/'>Welcome Guest!</Navbar.Brand> :
           <Navbar.Brand href='/'>Welcome {JSON.parse(localStorage.getItem("user")).username}!</Navbar.Brand>}
           <span className="dateTime">
-              {Date().toLocaleString()}
+              {date}
           </span>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
@@ -40,6 +49,13 @@ const TopNav = ({ news, changeTheme }) => {
             <Nav.Link activeClassName='active' as={NavLink} to='/bookmarks'>
               Bookmarks
             </Nav.Link>
+            <Nav.Link activeClassName='active' as={NavLink} to='/videos'>
+              Videos
+            </Nav.Link>
+            {localStorage.getItem('user') ?
+            <Nav.Link activeClassName='active' as={NavLink} to='/preference'>
+              Settings
+            </Nav.Link> : ""}
             {!localStorage.getItem('user') ?
             <Nav.Link to="/signup" activeClassName='active' as={NavLink} className="button_sign"><li>
               Sign Up

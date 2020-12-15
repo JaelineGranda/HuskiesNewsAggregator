@@ -4076,12 +4076,16 @@ input[type="button"].btn-block {
 }
 
 .navbar {
-  position: relative;
+  left: 0;
+  right: 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 .navbar > .container,
 .navbar > .container-fluid {
@@ -4244,7 +4248,7 @@ input[type="button"].btn-block {
   }
   .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 0.5rem;
-    padding-left: 0.5rem;
+    padding-left: 0.4rem;
   }
   .navbar-expand-lg > .container,
   .navbar-expand-lg > .container-fluid {
@@ -4410,6 +4414,20 @@ input[type="button"].btn-block {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  word-wrap: break-word;
+  background-color: lightslategray;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+.card-absolute {
+  position: relative;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  min-height: auto;
   word-wrap: break-word;
   background-color: #e1e1e1;
   background-clip: border-box;
@@ -9940,7 +9958,7 @@ a.text-dark:focus {
 }
 
 .text-muted {
-  color: #6c757d !important;
+  color: white !important;
 }
 
 .text-black-50 {
