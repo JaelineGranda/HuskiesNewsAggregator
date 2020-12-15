@@ -1,9 +1,7 @@
-
 const db = require("../models");
 
 
 exports.allAccess = (req, res) => { // for public access
-
     res.status(200).send("Public Content.");
   };
   
@@ -30,5 +28,3 @@ exports.allAccess = (req, res) => { // for public access
       res.end("Don't Exist Customer:\n:" + JSON.stringify(updatedCustomer, null, 4));
     }
   };
-
-

@@ -13,7 +13,10 @@ import { FacebookShareButton, FacebookIcon } from "react-share";
 import { RedditShareButton, RedditIcon  } from "react-share";
 import { EmailShareButton, EmailShareIcon } from "react-share";
 import { PinterestShareButton, PinterestIcon} from "react-share";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
+AOS.init();
 
 const NewsItem = ({
   item,
@@ -43,8 +46,8 @@ const NewsItem = ({
   
 
   return (
-    <Col xs={12} sm={6} md={6} lg={4} xl={4} className='my-2'>
-      <Card>
+    <Col xs={12} sm={6} md={6} lg={4} xl={4} className='my-2 cardContainer'>
+      <Card data-aos="fade-up">
         {item.urlToImage ? (
           <div
             className='urlImage'

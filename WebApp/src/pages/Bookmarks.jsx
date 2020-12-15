@@ -15,8 +15,8 @@ const Bookmarks = ({ bookmarkItems, theme }) => {
           </Col>
         </Row>
       </Container>
-      <Container>
-        <Row className='py-4'>
+      <Container fluid className={`heroContainer-${theme} bookmarkTitleContainer`}>
+        <Row>
           <Col xs={12} sm={12}>
             <p className='h5  text-center'>
               {bookmarkItems.length === 0 ? (

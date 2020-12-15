@@ -8,16 +8,11 @@ import { changeTheme } from '../actions/news';
 import AuthService from "../services/auth.service";
 import './TopNav.css';
 
-var today = new Date(),
-
-date = (today.getMonth() + 1) + '-' + today.getDate() + '-' + today.getFullYear();
-
 const logout = () => {
   debugger;
   AuthService.logout();
-  window.location.replace("/");
+  window.location.reload(false);
 }
-console.log(localStorage.getItem("user"));
 const TopNav = ({ news, changeTheme }) => {
   return (
     <Navbar collapseOnSelect expand='lg' bg={news.theme} variant={news.theme}>
@@ -26,7 +21,7 @@ const TopNav = ({ news, changeTheme }) => {
           <Navbar.Brand href='/'>Welcome Guest!</Navbar.Brand> :
           <Navbar.Brand href='/'>Welcome {JSON.parse(localStorage.getItem("user")).username}!</Navbar.Brand>}
           <span className="dateTime">
-          {date}
+              {Date().toLocaleString()}
           </span>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
@@ -40,21 +35,15 @@ const TopNav = ({ news, changeTheme }) => {
               </Nav.Link>
             <Nav.Link activeClassName='active' as={NavLink} to='/weather'>
               Weather
+
             </Nav.Link>
             <Nav.Link activeClassName='active' as={NavLink} to='/bookmarks'>
               Bookmarks
             </Nav.Link>
-            <Nav.Link activeClassName='active' as={NavLink} to='/videos'>
-              Videos
-            </Nav.Link>
-            {localStorage.getItem('user') ?
-            <Nav.Link activeClassName='active' as={NavLink} to='/preference'>
-              Settings
-            </Nav.Link> : ""}
             {!localStorage.getItem('user') ?
             <Nav.Link to="/signup" activeClassName='active' as={NavLink} className="button_sign"><li>
               Sign Up
-                </li></Nav.Link> : ""}
+                </li></Nav.Link>:null}
             {!localStorage.getItem('user') ?
               <Nav.Link to="/login" activeClassName='active' as={NavLink} className="button_sign"><li>
                 Login
@@ -62,13 +51,16 @@ const TopNav = ({ news, changeTheme }) => {
                 <Nav.Link to="/" onClick={logout} activeClassName='active' as={NavLink} className="button_sign"><li>
                 Logout
                 </li></Nav.Link>}
-            <Nav.Link>
-              <div
-                onClick={() =>
-                  changeTheme(news.theme === 'dark' ? 'light' : 'dark')
-                }
-                className={`circle-${news.theme === 'dark' ? 'light' : 'dark'}`}
-              />
+            <Nav.Link className="switchContainer">
+              <div>
+                <div className="switchBtn"
+                  onClick={() =>
+                    changeTheme(news.theme === 'dark' ? 'light' : 'dark')
+                  }
+                  className={`circle-${news.theme === 'dark' ? 'light' : 'dark'}`}
+                />
+              </div>
+              <span>Change color</span>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

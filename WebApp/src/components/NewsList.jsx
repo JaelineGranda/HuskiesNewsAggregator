@@ -10,7 +10,7 @@ const NewsList = ({ newsItems, loading, newsItemsTotal, theme, loadMore }) => {
   return (
     <Container>
       {newsItemsTotal !== null && !loading ? (
-        <Row className='py-3'>
+        <Row fluid className={`heroContainer-${theme} newsTitleContainer`}>
           <Col xs={12} sm={12}>
             <p className='h5  text-center'>{newsItemsTotal} News Result(s)</p>
           </Col>
