@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a40a7212.chunk.css",
+    "main.js": "/static/js/main.f9325c23.chunk.js",
+    "main.js.map": "/static/js/main.f9325c23.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.4908a922.js",
+    "runtime-main.js.map": "/static/js/runtime-main.4908a922.js.map",
+    "static/css/2.4707e12a.chunk.css": "/static/css/2.4707e12a.chunk.css",
+    "static/js/2.399a3411.chunk.js": "/static/js/2.399a3411.chunk.js",
+    "static/js/2.399a3411.chunk.js.map": "/static/js/2.399a3411.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.741065df3d574af698186a0edf3b12e8.js": "/precache-manifest.741065df3d574af698186a0edf3b12e8.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.4707e12a.chunk.css.map": "/static/css/2.4707e12a.chunk.css.map",
+    "static/css/main.a40a7212.chunk.css.map": "/static/css/main.a40a7212.chunk.css.map",
+    "static/js/2.399a3411.chunk.js.LICENSE.txt": "/static/js/2.399a3411.chunk.js.LICENSE.txt",
+    "static/media/bootstrap.css": "/static/media/bg-1.529a2302.jpg",
+    "static/media/news-default-image.jpg": "/static/media/news-default-image.013fb4a1.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4908a922.js",
+    "static/css/2.4707e12a.chunk.css",
+    "static/js/2.399a3411.chunk.js",
+    "static/css/main.a40a7212.chunk.css",
+    "static/js/main.f9325c23.chunk.js"
+  ]
+}
