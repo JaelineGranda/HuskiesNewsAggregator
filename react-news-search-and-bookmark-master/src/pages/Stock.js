@@ -60,60 +60,57 @@ export default class Stock extends React.Component {
                   <h1 className="text-white"><strong> Stock Market for {this.state.stockSymbol}</strong></h1>
                 </div>
               </div>
-            
-            <div className="border border-primary p-2">
-              <div className="d-flex flex-row justify-content-center">
-                <form className="form-inline py-2">
-                  <div className="form-group">
-                    <h3>
-                    <div className="text-center">
-                      <div className="row">
-                        <label className="text-secondary">Company Name: </label>
+              <div className="border border-primary p-2">
+                <div className="d-flex flex-row justify-content-center">
+                  <form className="form-inline py-2">
+                    <div className="form-group">
+                      <h3>
+                        <div className="text-center">
+                          <div className="row">
+                            <label className="text-secondary">Company Name: </label>
 
-                        <div className="col-md-6">
-                          <div className="input-group">
+                            <div className="col-md-6">
+                              <div className="input-group">
 
-                            <input type="text" className="form-control" placeholder="Search..." onChange={(e) => this.setState({ stockSymbol: e.target.value })} ></input>
-                            <div className="input-group-append">
-                              <button type="button" class="btn btn-secondary" onClick={this.handleClick}>Search
+                                <input type="text" className="form-control" placeholder="Search..." onChange={(e) => this.setState({ stockSymbol: e.target.value })} ></input>
+                                <div className="input-group-append">
+                                  <button type="button" class="btn btn-secondary" onClick={this.handleClick}>Search
                                <i className="fa fa-search"></i>
-                              </button>
+                                  </button>
+                                </div>
+
+                              </div>
                             </div>
 
                           </div>
+
                         </div>
-
-                      </div>
-
-</div>
-                    </h3>
-                  </div>
-                </form>
+                      </h3>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div className="text-center">
+                <h4><a href={"http://eoddata.com/symbols.aspx"} target='blank'>Click here to view more stock symbols</a></h4></div>
+              <div className="card card-body bg-secondary">
+                <div className="d-flex justify-content-center">
+                  <Plot
+                    data={[
+                      {
+                        x: this.state.stockChartXValues,
+                        y: this.state.stockChartYValues,
+                        type: "scatter",
+                        mode: "lines+markers",
+                        marker: { color: "red" },
+                      },
+                    ]}
+                    layout={{ width: 720, height: 440, title: "Stock market Plot" }}
+                  />
+                </div>
               </div>
             </div>
-            <div className="text-center">
-            <h4><a href={"http://eoddata.com/symbols.aspx"} target='blank'>Click here to view more stock symbols</a></h4></div>
-           
-          
-            <div className="card card-body bg-secondary">
-            <div className="d-flex justify-content-center">
-            <Plot 
-              data={[
-                {
-                  x: this.state.stockChartXValues,
-                  y: this.state.stockChartYValues,
-                  type: "scatter",
-                  mode: "lines+markers",
-                  marker: { color: "red" },
-                },
-              ]}
-              layout={{ width: 720, height: 440, title: "Stock market Plot" }}
-              />
-            </div>
-            </div>
           </div>
-        </div>
-      </div >
+        </div >
       </div>
 
     );
