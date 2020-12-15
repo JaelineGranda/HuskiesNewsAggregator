@@ -6,6 +6,7 @@ import Signup from './components/signup/signup.component';
 import Login from './components/login/login.component';
 import Weather from './components/weather/weather.component';
 import Preference from './components/preference/preference.component';
+import Video from './components/video/video.component';
 // Redux Store
 import { Provider } from 'react-redux';
 import store from './store';
@@ -35,6 +36,7 @@ const App = () => {
             <Route path='/stocks' exact component={Stocks} />
             <Route path='/bookmarks' exact component={Bookmarks} />
             <Route exact path="/weather" component={Weather} />
+            <Route exact path="/videos" component={Video} />
             <Route exact path="/preference" component={Preference} />
             <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />          

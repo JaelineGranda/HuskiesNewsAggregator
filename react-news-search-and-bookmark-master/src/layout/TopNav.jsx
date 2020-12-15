@@ -44,6 +44,9 @@ const TopNav = ({ news, changeTheme }) => {
             <Nav.Link activeClassName='active' as={NavLink} to='/bookmarks'>
               Bookmarks
             </Nav.Link>
+            <Nav.Link activeClassName='active' as={NavLink} to='/videos'>
+              Videos
+            </Nav.Link>
             {localStorage.getItem('user') ?
             <Nav.Link activeClassName='active' as={NavLink} to='/preference'>
               Settings
