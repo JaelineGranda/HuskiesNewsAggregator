@@ -10,7 +10,7 @@ import './TopNav.css';
 
 const logout = () => {
   AuthService.logout();
-  window.location.reload(false);
+  window.location.replace("/");
 }
 const TopNav = ({ news, changeTheme }) => {
   return (
