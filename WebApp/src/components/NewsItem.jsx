@@ -12,7 +12,6 @@ import { TwitterShareButton, TwitterIcon } from "react-share";
 import { FacebookShareButton, FacebookIcon } from "react-share";
 import { RedditShareButton, RedditIcon  } from "react-share";
 import { EmailShareButton, EmailIcon } from "react-share";
-import { PinterestShareButton, PinterestIcon} from "react-share";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
