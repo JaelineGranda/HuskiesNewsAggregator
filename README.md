@@ -4,10 +4,10 @@
 
 Team Members
 
-Charmi Dalal 
-DineshKumar 
-Jealine Granda 
-Anusha Chandrakanth Lingadahalli - 001007696
+Charmi Dalal (001582441)
+DineshKumar (001038358)
+Jealine Granda ()
+Anusha Chandrakanth Lingadahalli - (001007696)
 
 # About our project
 -------------------------------------------------------
@@ -36,6 +36,9 @@ Anusha Chandrakanth Lingadahalli - 001007696
 
 * Users can share news on social media.
 
+* Responsive in both Web and Phone.
+
+
 # Technologies Used
 --------------------------------------------------------
 
@@ -45,10 +48,26 @@ Anusha Chandrakanth Lingadahalli - 001007696
 - Mongo DB
 - Express JS
 - REST API
-- ngx-sharebuttons
+- react-bootstrap 
 - YouTube API
 - JWT
 - SCSS
+
+# Techical Features
+--------------------------------------------------------
+
+* Built using React.JS, react-bootstrap and Redux as State Management Control.
+
+* Appropriate Flow for User Signup & User Login with JWT Authentication
+
+* Node.js Express Architecture with CORS, Authentication & Authorization middleware, Mongoose ODM
+
+* Used Mongoose to interact with MongoDB Database.
+
+* Axios making HTTP requests to fetch or save data client-side.
+
+* Used HTTP REST API for searching and retrieving live news articles from all over the web.
+
 
 # Steps to Setup and Run the Application:
 -----------------------------------------------------------
@@ -85,6 +104,11 @@ cd WebApp
 npm run build
 npm run start
 
-Open your browser and go to http://localhost:4200/ to see our website up and running
+Open your browser and go to http://localhost:8081/  to see our website up and running
 
+
+[![Times-of-Huskies.png](https://i.postimg.cc/yxJrbrfH/Times-of-Huskies.png)](https://postimg.cc/9whp4158)
+
+
+[Times-of-Huskies.png](https://postimg.cc/9whp4158)
 
