@@ -30,7 +30,7 @@ class Video extends React.Component {
         return (
             <div className='ui-container' style={{marginTop: '1em'}}>
                 <SearchBar handleFormSubmit={this.handleSubmit}/>
-                <div className='ui grid'>
+                <div className='ui grid loginCompo '>
                     <div className="ui row">
                         <div className="videoList">
                             <VideoDetail video={this.state.selectedVideo}/>
