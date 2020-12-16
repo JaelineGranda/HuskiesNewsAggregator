@@ -20,6 +20,8 @@ import { getNewsSource, setTheme } from './actions/news';
 import { getBookmarkItems } from './actions/bookmarks';
 import Stocks from './pages/Stock';
 
+document.title = "Times of Huskies";
+
 const App = () => {
   useEffect(() => {
     store.dispatch(getNewsSource());

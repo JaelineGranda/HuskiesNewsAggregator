@@ -1,5 +1,6 @@
 import React from "react";
 
+// details of videos after search input
 const VideoDetail = ({ video }) => {
   if (!video) {
     return <div>

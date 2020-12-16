@@ -4,7 +4,7 @@ import convertUppercase from '../../utils/convertUppercase';
 import PropTypes from 'prop-types';
 
 const FiveDayDisplay = ({ forecast }) => {
-  const week = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'];
+  const week = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat']; // days of the week
 
   return (
     <div className="row">
