@@ -11,14 +11,14 @@ const Bookmarks = ({ bookmarkItems, theme }) => {
       <Container fluid className={`heroContainer-${theme}`}>
         <Row className='justify-content-md-center py-4'>
           <Col xs lg='8'>
-            <p className='h3 text-center'>Bookmarks</p>
+            <p className='h3 blackLabel'>Bookmarks</p>
           </Col>
         </Row>
       </Container>
       <Container fluid className={`heroContainer-${theme} bookmarkTitleContainer`}>
         <Row>
           <Col xs={12} sm={12}>
-            <p className='h5  text-center'>
+            <p className='h5  blackLabel'>
               {bookmarkItems.length === 0 ? (
                 <Fragment>
                   You have {bookmarkItems.length} Bookmarks(s)

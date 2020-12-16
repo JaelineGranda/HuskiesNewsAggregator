@@ -9798,7 +9798,10 @@ button.bg-dark:focus {
 .text-right {
   text-align: right !important;
 }
-
+.blackLabel{
+  color: black;
+  text-align: center !important;
+}
 .text-center {
   color: white;
   text-align: center !important;
