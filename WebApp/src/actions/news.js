@@ -16,10 +16,12 @@ let newsApiKey;
 //newsApi key
 if (process.env.NODE_ENV !== 'production') {
   //newsApiKey = "5c5522179941446d83fbc14fa4781b40";
-  newsApiKey="2074f3fdd61247d89814daa1745d49b5";                      //api keys to fetch the nrew
+
+  newsApiKey="2074f3fdd61247d89814daa1745d49b5";
 } else {
- // newsApiKey = "5c5522179941446d83fbc14fa4781b40";                
- newsApiKey="2074f3fdd61247d89814daa1745d49b5";                 
+ // newsApiKey = "5c5522179941446d83fbc14fa4781b40";
+ newsApiKey="2074f3fdd61247d89814daa1745d49b5";
+
 }
 
 // Set Theme

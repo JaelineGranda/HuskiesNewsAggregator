@@ -25,8 +25,10 @@ const Home = ({ setTopNews, news, clearTopNews }) => {         // fucntions for 
       setTopNews(url, page);
     }
 
-    if(!categorySourceUrl) {         // api for the open news
-      let url1 = `http://newsapi.org/v2/everything?q=boston&sortBy=publishedAt&apiKey=2074f3fdd61247d89814daa1745d49b5`;
+
+    if(!categorySourceUrl) {
+      let url1 = `http://newsapi.org/v2/everything?q=usa&sortBy=publishedAt&apiKey=2074f3fdd61247d89814daa1745d49b5`;
+
       setTopNews(url1,page);
     }
 
