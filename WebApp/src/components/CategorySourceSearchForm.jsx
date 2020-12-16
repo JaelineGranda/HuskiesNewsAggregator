@@ -92,7 +92,7 @@ const CategorySourceSearch = ({ onCategorySourceSearch, news }) => {
                         <option value='' >All Category</option>
                         {localStorage.getItem("user") == null || localStorage.getItem("userCat").split(",").indexOf("Business") > -1  ?
                           <option value='business'>Business</option> : ""}
-                        {localStorage.getItem("user") == null || localStorage.getItem("userCat").split(",").indexOf("Entertaiment") > -1 || localStorage.getItem("user") == null ?
+                        {localStorage.getItem("user") == null || localStorage.getItem("userCat").split(",").indexOf("Entertainment") > -1 || localStorage.getItem("user") == null ?
                           <option value='entertainment'>Entertainment</option> : ""}
                         {localStorage.getItem("user") == null || localStorage.getItem("userCat").split(",").indexOf("General") > -1 || localStorage.getItem("user") == null ?
                           <option value='general'>General</option> : ""}
