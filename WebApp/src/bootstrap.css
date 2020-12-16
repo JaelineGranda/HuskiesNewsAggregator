@@ -9801,6 +9801,15 @@ button.bg-dark:focus {
   color: black;
   text-align: center !important;
 }
+.vidContainer{
+  float: right;
+}
+/* .videoList{
+  background-color: black;
+  width: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 0, .4)
+} */
 .text-center {
   color: white;
   text-align: center !important;
