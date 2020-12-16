@@ -4,7 +4,7 @@ import { config } from './api/youtubeapi';
 import VideoList from './videolist';
 import VideoDetail from './videodetail';
 import axios from 'axios';
-import './video.component.css'
+import './video.css'
 
 class Video extends React.Component {
     state = {
@@ -30,7 +30,7 @@ class Video extends React.Component {
         return (
             <div className='ui-container' style={{marginTop: '1em'}}>
                 <SearchBar handleFormSubmit={this.handleSubmit}/>
-                <div className='ui grid loginCompo '>
+                <div className='ui grid'>
                     <div className="ui row">
                         <div className="videoList">
                             <VideoDetail video={this.state.selectedVideo}/>

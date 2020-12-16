@@ -1,4 +1,5 @@
 import React from "react";
+import './video.css'
 
 // details of videos after search input
 const VideoDetail = ({ video }) => {
@@ -11,12 +12,8 @@ const VideoDetail = ({ video }) => {
   console.log(typeof video);
   return (
     <div>
-      <div className="ui embed">
+      <div className="ui-embed">
         <iframe src={videoSrc} allowFullScreen title="Video player" />
-      </div>
-      <div className="ui segment">
-        <h4 className="ui header">{video.snippet.title}</h4>
-        <p>{video.snippet.description}</p>
       </div>
     </div>
   );
