@@ -4,7 +4,7 @@ import { config } from './api/youtubeapi';
 import VideoList from './videolist';
 import VideoDetail from './videodetail';
 import axios from 'axios';
-import './video.css'
+import './video.scss'
 
 class Video extends React.Component {
     state = {

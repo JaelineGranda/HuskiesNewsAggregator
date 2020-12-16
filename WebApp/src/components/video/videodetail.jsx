@@ -1,5 +1,5 @@
 import React from "react";
-import './video.css'
+import './video.scss'
 
 // details of videos after search input
 const VideoDetail = ({ video }) => {

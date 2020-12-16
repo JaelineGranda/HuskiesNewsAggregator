@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { changeTheme } from '../actions/news';
 import AuthService from "../services/auth.service";
-import './TopNav.css';
+import './TopNav.scss';
 
 const logout = () => {
   AuthService.logout();

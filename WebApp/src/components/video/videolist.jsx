@@ -1,6 +1,6 @@
 import React from 'react';
 import VideoItem from './videoitem/videoitem';
-import './video.css'
+import './video.scss'
 
 // handles selection of video from search results list
 const VideoList = ({videos , handleVideoSelect}) => {

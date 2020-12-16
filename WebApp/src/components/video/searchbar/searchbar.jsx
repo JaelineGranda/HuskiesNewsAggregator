@@ -1,5 +1,5 @@
 import React from 'react';
-import './searchbar.css';
+import './searchbar.scss';
 
 class Searchbar extends React.Component {
     // sets term based on input
