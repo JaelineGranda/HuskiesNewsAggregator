@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const User = mongoose.model(
   "User",
-  new mongoose.Schema({ // creates new mongoose schema with properties for todo items
+  new mongoose.Schema({ // creates new mongoose schema with properties for user items
     username: String,
     email: String,
     password: String,

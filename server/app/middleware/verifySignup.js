@@ -10,7 +10,7 @@ checkDuplicateUsernameOrEmail = (req, res, next) => {
     username: req.body.username
   }).exec((err, user) => {
     if (err) {
-      res.status(500).send({ message: err });
+      res.status(500).send({ message: err }); // error message
       return;
     }
 
@@ -19,7 +19,7 @@ checkDuplicateUsernameOrEmail = (req, res, next) => {
       return;
     }
 
-    // Email
+    // check email entered
     User.findOne({
       email: req.body.email
     }).exec((err, user) => {
@@ -28,8 +28,8 @@ checkDuplicateUsernameOrEmail = (req, res, next) => {
         return;
       }
 
-      if (user) {
-        res.status(400).send({ message: "Email is already taken." });
+      if (user) { // if user with this email already exists send error
+        res.status(400).send({message: "Email is already taken." });
         return;
       }
 
@@ -38,6 +38,7 @@ checkDuplicateUsernameOrEmail = (req, res, next) => {
   });
 };
 
+// checks roles of account
 var checkRolesExisted = (req, res, next) => {
   if (req.body.roles) {
     for (let i = 0; i < req.body.roles.length; i++) {
