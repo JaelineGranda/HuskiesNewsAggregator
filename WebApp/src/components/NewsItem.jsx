@@ -11,7 +11,7 @@ import NewsDefaultImage from './news-default-image.jpg';
 import { TwitterShareButton, TwitterIcon } from "react-share";
 import { FacebookShareButton, FacebookIcon } from "react-share";
 import { RedditShareButton, RedditIcon  } from "react-share";
-import { EmailShareButton, EmailShareIcon } from "react-share";
+import { EmailShareButton, EmailIcon } from "react-share";
 import { PinterestShareButton, PinterestIcon} from "react-share";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -109,9 +109,10 @@ const NewsItem = ({
                 < PinterestShareButton url={item.url}>
               <PinterestIcon logoFillColor="white" size ={33} round/>
                 </ PinterestShareButton>
-                {/* < EmailShareButton url={item.url}>
-              <EmailShareIcon logoFillColor="white" size ={33} round/>
-                </ EmailShareButton> */}
+                
+                < EmailShareButton url={item.url}>
+              <EmailIcon logoFillColor="white" size ={33} round/>
+                </ EmailShareButton>
           </small>
         </Card.Footer>
       </Card>
