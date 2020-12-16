@@ -3,8 +3,11 @@ import CategorySourceSearchForm from '../components/CategorySourceSearchForm';
 import { setTopNews, clearTopNews } from '../actions/news';
 import NewsList from '../components/NewsList';
 import { connect } from 'react-redux';
+
 //Holds layout of home page for news
-const Home = ({ setTopNews, news, clearTopNews }) => {         // fucntions for the homescreen
+
+// sets homepagewith tops news
+const Home = ({ setTopNews, news, clearTopNews }) => {
   const [page, setPage] = useState(1);
   const [categorySourceUrl, setCategorySourceUrl] = useState('');
   const [isSearch, setIsSearch] = useState(false);

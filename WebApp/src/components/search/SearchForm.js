@@ -7,6 +7,7 @@ import SearchZip from './SearchZip';
 import classnames from 'classnames';
 // searches for the current location by zipcode with forcasts
 class SearchForm extends Component {
+  // initial state
   state = {
     zipcode: '',
     coordinates: null
@@ -15,7 +16,7 @@ class SearchForm extends Component {
   onChange = e => this.setState({ [e.target.name]: e.target.value });
 
   onResetClick = dispatch => {
-    this.setState({ zipcode: '' });
+    this.setState({ zipcode: '' }); // blank zipcode onload
 
     dispatch({
       type: 'RESET_FORM'
@@ -24,7 +25,7 @@ class SearchForm extends Component {
 
   getWeather = async (dispatch, e) => {
     e.preventDefault();
-    const { zipcode, coordinates } = this.state;
+    const { zipcode, coordinates } = this.state; // sets state of zipcode and coordinates
 
     dispatch({ type: 'LOADING' });
 
@@ -58,6 +59,7 @@ class SearchForm extends Component {
     }
   };
 
+  // finds location
   findGeolocation = (dispatch, e) => {
     e.persist();
     e.preventDefault();

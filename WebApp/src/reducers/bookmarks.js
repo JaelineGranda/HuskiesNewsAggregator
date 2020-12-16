@@ -4,10 +4,12 @@ import {
   GET_BOOKMARK_ITEMS
 } from '../actions/types';
 
+// initial state of bookmarks
 const initialState = {
   bookmarkItems: []
 };
 // Reducer file manages the current state of bookmark
+// actions for bookmark/unbookmark item
 export default (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {

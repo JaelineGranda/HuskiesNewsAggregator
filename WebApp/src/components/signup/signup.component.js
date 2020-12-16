@@ -68,24 +68,29 @@ export default class Register extends Component {
     };
   }
 
+  // changes username state
   onChangeUsername(e) {
     this.setState({
       username: e.target.value
     });
   }
 
+  // changes email state
   onChangeEmail(e) {
     this.setState({
       email: e.target.value
     });
   }
 
+  // changes password state
   onChangePassword(e) {
     this.setState({
       password: e.target.value
     });
   }
 
+  // handles user signup
+  
   handleRegister(e) {
     e.preventDefault();
 
