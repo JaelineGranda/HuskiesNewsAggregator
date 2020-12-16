@@ -78,12 +78,9 @@ export default class Stock extends React.Component {
                                <i className="fa fa-search"></i>
                                   </button>
                                 </div>
-
                               </div>
                             </div>
-
                           </div>
-
                         </div>
                       </h3>
                     </div>
