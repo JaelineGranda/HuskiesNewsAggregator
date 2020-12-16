@@ -2,12 +2,14 @@ import React from 'react';
 import './searchbar.css';
 
 class Searchbar extends React.Component {
+    // sets term based on input
     handleChange = (event) => {
         this.setState({
             term: event.target.value
         });
     
     };
+    // on submit function
     handleSubmit = event => {
         event.preventDefault();
         this.props.handleFormSubmit(this.state.term);

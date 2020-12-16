@@ -33,12 +33,14 @@ export default class Login extends Component {
     };
   }
 
+  //sets username
   onChangeUsername(e) {
     this.setState({
       username: e.target.value
     });
   }
 
+  // sets password
   onChangePassword(e) {
     this.setState({
       password: e.target.value

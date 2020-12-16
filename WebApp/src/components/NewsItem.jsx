@@ -26,6 +26,7 @@ const NewsItem = ({
   bookmarkItems,
   facebook
 }) => {
+  // if item is bookmarked find bookmark title
   const isBookmark = item => {
     if (bookmarkItems !== null) {
       return (
