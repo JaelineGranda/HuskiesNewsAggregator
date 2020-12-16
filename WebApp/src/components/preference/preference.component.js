@@ -100,7 +100,7 @@ export default class Login extends Component {
             onSubmit={this.handleSave}
             ref={c => {
               this.form = c;
-            }} class="loginForm"
+            }} class="loginForm1"
           >
             <div className="form-group">
               <div>Category</div>

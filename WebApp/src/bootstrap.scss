@@ -4406,19 +4406,18 @@ input[type="button"].btn-block {
 .navbar-dark .navbar-text a:focus {
   color: #fff;
 }
-.loginCompo
-{
-  background-color: rgba(0, 0, 0, .2) !important;
+.loginCompo {
+  background-color: rgba(0, 0, 0, 0.2) !important;
   margin: 50px;
 }
-.innerFormLogin{
-  margin:50px;
+.innerFormLogin {
+  margin: 50px;
 }
-.weatherBox{
+.weatherBox {
   background-color: white;
 }
-.stockHeader{
-  background-color: rgba(0, 0, 0, .2);
+.stockHeader {
+  background-color: rgba(0, 0, 0, 0.2);
   height: 750px;
 }
 .card {
@@ -4427,7 +4426,7 @@ input[type="button"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: rgba(0, 0, 0, .4);
+  background-color: rgba(0, 0, 0, 0.4);
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
@@ -9811,12 +9810,12 @@ button.bg-dark:focus {
   background: rgba(0, 0, 0, .4)
 } */
 .text-center {
-  color: white;
+  color: black;
   text-align: center !important;
 }
- .whiteLabel{
-   color: white;
- }
+.whiteLabel {
+  color: white;
+}
 @media (min-width: 576px) {
   .text-sm-left {
     text-align: left !important;

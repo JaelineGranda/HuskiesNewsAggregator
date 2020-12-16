@@ -107,9 +107,7 @@ const NewsItem = ({
                 < RedditShareButton url={item.url}>
               <RedditIcon logoFillColor="white" size ={33} round/>
                 </ RedditShareButton>
-                < PinterestShareButton url={item.url}>
-              <PinterestIcon logoFillColor="white" size ={33} round/>
-                </ PinterestShareButton>
+               
                 
                 < EmailShareButton url={item.url}>
               <EmailIcon logoFillColor="white" size ={33} round/>
