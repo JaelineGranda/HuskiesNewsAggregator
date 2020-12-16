@@ -3,6 +3,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 
+// sets initial state of store
 const initialState = {};
 
 const middleware = [thunk];

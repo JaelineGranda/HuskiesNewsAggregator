@@ -11,6 +11,7 @@ class Video extends React.Component {
         videos: [],
         selectedVideo: null
     }
+    // gets videos from youtube based on searchbar input
     handleSubmit = async (termFromSearchBar) => {
         config['params'] = { ...config['params'], q: termFromSearchBar};
         const response = await axios.get('/search', config);
@@ -20,17 +21,18 @@ class Video extends React.Component {
         })
         console.log("this is resp",response);
     };
+    // sets state when video is chosen
     handleVideoSelect = (video) => {
         this.setState({selectedVideo: video})
     }
 
     render() {
         return (
-            <div className='ui container' style={{marginTop: '1em'}}>
+            <div className='ui-container' style={{marginTop: '1em'}}>
                 <SearchBar handleFormSubmit={this.handleSubmit}/>
                 <div className='ui grid'>
                     <div className="ui row">
-                        <div className="eleven wide column">
+                        <div className="videoList">
                             <VideoDetail video={this.state.selectedVideo}/>
                         </div>
                         <div className="five wide column">
