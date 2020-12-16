@@ -31,13 +31,13 @@ class CurrentWeather extends Component {
                   <div className="row">
                     <div className="col-sm-7 mx-auto">
                       <div className="card-body">
-                        <h4 className="text-center m-0 p-0">
+                        <h4 className="weatherBody m-0 p-0">
                           <Moment format="MMMM Do YYYY" />
                         </h4>
 
                         <div className="row">
                           <div className="col-md-6 align-self-center">
-                            <div className="card-body text-center align-self-center p-0 m-0">
+                            <div className="card-body weatherBody align-self-center p-0 m-0">
                               <h2 className="">
                                 <strong>{temperature}° F</strong>
                               </h2>

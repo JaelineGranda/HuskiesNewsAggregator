@@ -19,7 +19,7 @@ class TodayForecast extends Component {
                   <div className="row">
                     <div className="col-11 mx-auto">
                       <div className="">
-                        <h4 className="text-center m-0">12-Hour Forecast</h4>
+                        <h4 className="weatherBody m-0">12-Hour Forecast</h4>
                         <TodayDisplay forecast={todayForecast} />
                       </div>
                     </div>

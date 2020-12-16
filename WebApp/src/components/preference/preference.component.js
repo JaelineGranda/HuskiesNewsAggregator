@@ -102,8 +102,8 @@ export default class Login extends Component {
               this.form = c;
             }} class="loginForm1"
           >
-            <div className="form-group">
-              <div>Category</div>
+            <div className="form-group prefMainDiv">
+              <div className="prefHead"><h3>Catagory Preference List</h3></div>
               
                 <div class="checkSection">
                   
@@ -118,8 +118,8 @@ export default class Login extends Component {
                 </div>
               
             </div>
-            <div className="form-group">
-              <div>Country</div>
+            <div className="form-group prefMainDiv">
+              <div className="prefHead"><h3>Country Preference List</h3></div>
               <div>
                 <div class="checkSection">
                   <div class="checkboxClass"><input type="checkbox" onChange={this.handleCntrInputChange} checked={this.handleCntrCheck("United States of America")} name="United States of America" cntrName="United States of America" class="country" /> <label>United States of America</label></div>
@@ -138,7 +138,7 @@ export default class Login extends Component {
                   <div class="checkboxClass"><input type="checkbox" onChange={this.handleCntrInputChange} checked={this.handleCntrCheck("Indonesia")} name="Indonesia" cntrName="Indonesia" class="country" /> <label>Indonesia</label></div>
                 </div>
               </div>
-              <div className="form-group">
+              <div className="form-group newsButtons">
                 <button
                   className="btn btn-primary btn-block"
                 >
@@ -148,7 +148,7 @@ export default class Login extends Component {
             </div>
             
           </Form>
-          <div className="form-group"><button onClick={this.deleteMyAcc}
+          <div className="form-group newsButtons"><button onClick={this.deleteMyAcc}
             className="btn btn-primary btn-block"
           ><span>Delete My Account</span>
           </button></div>

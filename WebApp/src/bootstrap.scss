@@ -2035,7 +2035,6 @@ select.form-control[multiple] {
 textarea.form-control {
   height: auto;
 }
-
 .form-group {
   margin-bottom: 1rem;
 }
@@ -2488,6 +2487,10 @@ fieldset:disabled a.btn {
   color: #212529;
   background-color: #97c5e0;
   border-color: #97c5e0;
+}
+.weatherBody{
+  color: white;
+  text-align: center;
 }
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,

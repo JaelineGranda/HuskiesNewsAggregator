@@ -15,7 +15,7 @@ const TodayForecastDisplay = ({ forecast }) => {
         return (
           <div className="col-xs-auto mx-auto" key={time}>
             <div
-              className="text-center item-hl mt-2"
+              className="weatherBody item-hl mt-2"
               style={{ width: '150px', height: '225px' }}
             >
               <div className="card-body">
