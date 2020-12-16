@@ -26,7 +26,7 @@ const Home = ({ setTopNews, news, clearTopNews }) => {
     }
 
     if(!categorySourceUrl) {
-      let url1 = `http://newsapi.org/v2/everything?q=bitcoin&sortBy=publishedAt&apiKey=afbc440a2ed6400d8a7a875b87ba539c`;
+      let url1 = `http://newsapi.org/v2/everything?q=boston&sortBy=publishedAt&apiKey=afbc440a2ed6400d8a7a875b87ba539c`;
       setTopNews(url1,page);
     }
 

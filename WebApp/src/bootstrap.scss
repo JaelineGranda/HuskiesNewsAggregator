@@ -2488,6 +2488,10 @@ fieldset:disabled a.btn {
   background-color: #97c5e0;
   border-color: #97c5e0;
 }
+.weatherBody{
+  color: white;
+  text-align: center;
+}
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {

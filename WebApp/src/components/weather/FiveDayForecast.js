@@ -24,7 +24,7 @@ class FiveDayForecast extends Component {
                   <div className="row">
                     <div className="col-11 mx-auto">
                       <div className="card-body">
-                        <h4 className="text-center m-0">5-Day Forecast</h4>
+                        <h4 className="weatherBody m-0">5-Day Forecast</h4>
                         <FiveDayDisplay forecast={dailyForecast} />
                       </div>
                     </div>

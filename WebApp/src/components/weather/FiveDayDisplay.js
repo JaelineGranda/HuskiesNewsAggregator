@@ -15,7 +15,7 @@ const FiveDayDisplay = ({ forecast }) => {
         return (
           <div className="col-xs-auto mx-auto" key={date}>
             <div
-              className="text-center mt-2"
+              className="weatherBody mt-2"
               style={{ width: '150px', height: '225px' }}
             >
               <div className="card-body">
