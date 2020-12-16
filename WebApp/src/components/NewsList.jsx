@@ -25,7 +25,7 @@ const NewsList = ({ newsItems, loading, newsItemsTotal, theme, loadMore }) => {
         </Row>
       )}
 
-      {loading && (
+      {loading && (   //  loads more news on the screen
         <Row className='justify-content-md-center py-4'>
           <Col xs={12} sm={8} className='text-center'>
             <Spinner animation='border' size='lg' />
@@ -33,7 +33,7 @@ const NewsList = ({ newsItems, loading, newsItemsTotal, theme, loadMore }) => {
         </Row>
       )}
 
-      {newsItems.length < newsItemsTotal && !loading && (
+      {newsItems.length < newsItemsTotal && !loading && (   // add load more btn to call loading function
         <Row className='justify-content-md-center py-2'>
           <Col xs={12} sm={12} className='text-center'>
             <Button className='py-2' variant={theme} onClick={loadMore}>

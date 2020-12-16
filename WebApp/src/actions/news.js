@@ -16,10 +16,10 @@ let newsApiKey;
 //newsApi key
 if (process.env.NODE_ENV !== 'production') {
   //newsApiKey = "5c5522179941446d83fbc14fa4781b40";
-  newsApiKey="afbc440a2ed6400d8a7a875b87ba539c";
+  newsApiKey="afbc440a2ed6400d8a7a875b87ba539c";                      //api keys to fetch the news
 } else {
- // newsApiKey = "5c5522179941446d83fbc14fa4781b40";
- newsApiKey="afbc440a2ed6400d8a7a875b87ba539c";
+ // newsApiKey = "5c5522179941446d83fbc14fa4781b40";                
+ newsApiKey="afbc440a2ed6400d8a7a875b87ba539c";                 
 }
 
 // Set Theme
@@ -45,7 +45,7 @@ export const setTheme = () => {
 
 // Change theme
 export const changeTheme = theme => {
-  localStorage.setItem('theme', "");
+  localStorage.setItem('theme', "light");
   if (theme === 'dark') {
     document.body.style.backgroundColor = '#ccc';
   } else {

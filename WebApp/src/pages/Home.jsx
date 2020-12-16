@@ -4,7 +4,7 @@ import { setTopNews, clearTopNews } from '../actions/news';
 import NewsList from '../components/NewsList';
 import { connect } from 'react-redux';
 
-const Home = ({ setTopNews, news, clearTopNews }) => {
+const Home = ({ setTopNews, news, clearTopNews }) => {         // fucntions for the homescreen
   const [page, setPage] = useState(1);
   const [categorySourceUrl, setCategorySourceUrl] = useState('');
   const [isSearch, setIsSearch] = useState(false);
@@ -25,7 +25,7 @@ const Home = ({ setTopNews, news, clearTopNews }) => {
       setTopNews(url, page);
     }
 
-    if(!categorySourceUrl) {
+    if(!categorySourceUrl) {         // api for the open news
       let url1 = `http://newsapi.org/v2/everything?q=boston&sortBy=publishedAt&apiKey=afbc440a2ed6400d8a7a875b87ba539c`;
       setTopNews(url1,page);
     }
