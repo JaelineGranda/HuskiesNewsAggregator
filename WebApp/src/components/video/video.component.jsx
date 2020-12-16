@@ -8,16 +8,16 @@ import './video.scss'
 
 class Video extends React.Component {
     state = {
-        videos: [],
-        selectedVideo: null
+        videos: [], // sets state of videos
+        selectedVideo: null // sets selected video to null
     }
-    // gets videos from youtube based on searchbar input
+    // takes searchbar input
     handleSubmit = async (termFromSearchBar) => {
         config['params'] = { ...config['params'], q: termFromSearchBar};
         const response = await axios.get('/search', config);
-
+        // gets videos from youtube api
         this.setState({
-            videos: response.data.items
+            videos: response.data.items // search results
         })
         console.log("this is resp",response);
     };

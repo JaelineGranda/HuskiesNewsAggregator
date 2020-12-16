@@ -1,6 +1,7 @@
 import React from 'react';
 import './videoitem.scss';
 
+// function handles video item selection from list
 const VideoItem = ({video , handleVideoSelect}) => {
     return (
         <div onClick={ () => handleVideoSelect(video)} className=' video-item item'>
