@@ -7,6 +7,7 @@ import axios from 'axios';
 export default class Login extends Component {
   constructor(props) {
     super(props);
+    // initial state of preferences
     this.state = { countries: [], categories: [], checked: false };
     this.handleSave = this.handleSave.bind(this);
     this.handleCheck = this.handleCheck.bind(this);
@@ -15,18 +16,21 @@ export default class Login extends Component {
     this.handleCntrInputChange = this.handleCntrInputChange.bind(this);
     this.deleteMyAcc = this.deleteMyAcc.bind(this);
   }
+  // gets user preferences from server
   componentDidMount() {
     fetch("http://localhost:8001/api/user/getPreferences?id=" + JSON.parse(localStorage.getItem("user")).id).then((results) => { return results.json() }).then((results) => this.setState({ categories: results.categories, countries: results.countries }))
   }
 
-  deleteMyAcc(event) {
+  // delete user account
+  deleteMyAcc(event) { // confirmation of request
      if(window.confirm("Are you sure want to delete your account?")){
         axios.delete("http://localhost:8001/api/user/delete?id="+JSON.parse(localStorage.getItem("user")).id ).then((data) => localStorage.removeItem("user"))
-        AuthService.logout();
+        AuthService.logout(); // logs user out and deletes account
         window.location.replace("/");
       }
   }
 
+  // handles input change of categories checked
   handleInputChange(event) {
     const target = event.target;
     if (!target.checked) {
@@ -44,6 +48,7 @@ export default class Login extends Component {
     }
   }
 
+  // handles input check of countries checked 
   handleCntrInputChange(event) {
     const target = event.target;
     if (!target.checked) {
@@ -61,6 +66,7 @@ export default class Login extends Component {
     }
   }
 
+  // saves new user categories checked
   handleSave(e) {
     e.preventDefault();
     var catlist = [];
@@ -71,6 +77,7 @@ export default class Login extends Component {
         catlist.push(catagory.item(i).getAttribute("catName"));
       }
     }
+    // saves new user countries checked
     localStorage.setItem('userCat', catlist);
     var country = document.getElementsByClassName("country");
     for (var j = 0; j < country.length; j++) {
@@ -78,6 +85,7 @@ export default class Login extends Component {
         countryList.push(country.item(j).getAttribute("cntrName"));
       }
     }
+    // updates user preferences
     axios.put("http://localhost:8001/api/user/update", { "id": JSON.parse(localStorage.getItem("user")).id, "categories": catlist, "countries": countryList })
     localStorage.setItem('userCntry', countryList);
     alert("Changes saved successfully!")

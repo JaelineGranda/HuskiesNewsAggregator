@@ -16,9 +16,11 @@ const logout = () => {
 
 var today = new Date(),
 month = today.getMonth();
+// array of months
 var months = ["Jan", "Feb", "Mar", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
 var setMonth = months[month]
 
+// sets date
 const date = (setMonth) + ' ' + today.getDate() + ', ' + today.getFullYear();
 
 

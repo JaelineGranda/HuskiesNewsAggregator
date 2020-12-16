@@ -12,6 +12,7 @@ export default class Stock extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  // calls fetch stock function
   componentDidMount() {
     this.fetchStock();
   }

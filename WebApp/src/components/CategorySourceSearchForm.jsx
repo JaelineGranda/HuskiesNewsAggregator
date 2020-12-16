@@ -11,8 +11,9 @@ import { FaSearch } from 'react-icons/fa';
 
 
 
-
+// category news search
 const CategorySourceSearch = ({ onCategorySourceSearch, news }) => {
+  // sets empty states for country and category
   const [type, setType] = useState('category');
   const [country, setCountry] = useState('');
   const [category, setCategory] = useState('');

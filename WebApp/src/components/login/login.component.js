@@ -46,6 +46,7 @@ export default class Login extends Component {
     });
   }
 
+  // handles login
   handleLogin(e) {
     e.preventDefault();
 

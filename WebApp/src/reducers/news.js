@@ -10,6 +10,7 @@ import {
   SET_THEME
 } from '../actions/types';
 
+// initial state of news
 const initialState = {
   newsLoading: false,
   newsSourceLoading: false,

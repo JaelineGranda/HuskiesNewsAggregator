@@ -6,7 +6,7 @@ Team Members
 
 Charmi Dalal (001582441)
 DineshKumar (001038358)
-Jealine Granda (001257108)
+Jaeline Granda (001257108)
 Anusha Chandrakanth Lingadahalli - (001007696)
 
 # About our project
