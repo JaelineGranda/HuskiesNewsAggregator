@@ -65,7 +65,7 @@ export default class Stock extends React.Component {
                   <form className="form-inline py-2">
                     <div className="form-group">
                       <h3>
-                        <div className="text-center">
+                        <div className="text-center whiteLabel">
                           <div className="row">
                             <label>Company Name: </label>
 

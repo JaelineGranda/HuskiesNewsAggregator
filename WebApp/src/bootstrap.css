@@ -4462,6 +4462,7 @@ input[type="button"].btn-block {
 }
 
 .card-body {
+  color: white;
   flex: 1 1 auto;
   padding: 1.25rem;
 }
@@ -9799,10 +9800,12 @@ button.bg-dark:focus {
 }
 
 .text-center {
-  color: black;
+  color: white;
   text-align: center !important;
 }
-
+ .whiteLabel{
+   color: white;
+ }
 @media (min-width: 576px) {
   .text-sm-left {
     text-align: left !important;
