@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-
+// searches for the current location by zipcode
 const SearchZip = ({ value, onChange, onResetClick }) => {
   return (
     <Fragment>

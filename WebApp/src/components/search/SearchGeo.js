@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+// searches for the current location
 const SearchGeo = ({ findGeolocation }) => {
   return (
     <div className="input-group-prepend">

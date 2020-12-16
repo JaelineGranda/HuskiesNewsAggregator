@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+// Add spinner in the webapp for loading
 const Spinner = ({ color }) => {
   return (
     <div className="d-flex justify-content-center">

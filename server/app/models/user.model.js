@@ -9,8 +9,8 @@ const User = mongoose.model(
     countries: {
       type: Array,
       default: ["United States of America", "United Kingdom", "Canada", "China", "Russia", "France",
-                "Philippines", "United Arab Emirates", "Australia", "Argentina", "South Korea", "Indonesia"]
-      },
+        "Philippines", "United Arab Emirates", "Australia", "Argentina", "South Korea", "Indonesia"]
+    },
     categories: {
       type: Array,
       default: ["Business", "Entertainment", "General", "Health", "Science", "Sports", "Technology"]

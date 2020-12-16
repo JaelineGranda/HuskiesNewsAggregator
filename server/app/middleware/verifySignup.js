@@ -29,7 +29,7 @@ checkDuplicateUsernameOrEmail = (req, res, next) => {
       }
 
       if (user) { // if user with this email already exists send error
-        res.status(400).send({message: "Email is already taken." });
+        res.status(400).send({ message: "Email is already taken." });
         return;
       }
 

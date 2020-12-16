@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 const Context = React.createContext();
-
+// reducer dile manages states and handels erorrs
 const reducer = (state, action) => {
   switch (action.type) {
     case 'UPDATE_LOCATION':

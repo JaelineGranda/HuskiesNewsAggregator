@@ -13,9 +13,9 @@ const logout = () => {
   window.location.replace("/");
 }
 
-
+// Loads nav link with all the components redirection
 var today = new Date(),
-month = today.getMonth();
+  month = today.getMonth();
 var months = ["Jan", "Feb", "Mar", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
 var setMonth = months[month]
 
@@ -29,9 +29,9 @@ const TopNav = ({ news, changeTheme }) => {
         {!localStorage.getItem('user') ?
           <Navbar.Brand href='/'>Welcome Guest!</Navbar.Brand> :
           <Navbar.Brand href='/'>Welcome {JSON.parse(localStorage.getItem("user")).username}!</Navbar.Brand>}
-          <span className="dateTime">
-              {date}
-          </span>
+        <span className="dateTime">
+          {date}
+        </span>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
           <Nav className='ml-auto'>
@@ -53,31 +53,20 @@ const TopNav = ({ news, changeTheme }) => {
               Videos
             </Nav.Link>
             {localStorage.getItem('user') ?
-            <Nav.Link activeClassName='active' as={NavLink} to='/preference'>
-              Settings
+              <Nav.Link activeClassName='active' as={NavLink} to='/preference'>
+                Settings
             </Nav.Link> : ""}
             {!localStorage.getItem('user') ?
-            <Nav.Link to="/signup" activeClassName='active' as={NavLink} className="button_sign"><li>
-              Sign Up
-                </li></Nav.Link>:null}
+              <Nav.Link to="/signup" activeClassName='active' as={NavLink} className="button_sign"><li>
+                Sign Up
+                </li></Nav.Link> : null}
             {!localStorage.getItem('user') ?
               <Nav.Link to="/login" activeClassName='active' as={NavLink} className="button_sign"><li>
                 Login
-                </li></Nav.Link> : 
-                <Nav.Link to="/" onClick={logout} activeClassName='active' as={NavLink} className="button_sign"><li>
+                </li></Nav.Link> :
+              <Nav.Link to="/" onClick={logout} activeClassName='active' as={NavLink} className="button_sign"><li>
                 Logout
                 </li></Nav.Link>}
-            {/* <Nav.Link className="switchContainer">
-              <div>
-                <div className="switchBtn"
-                  onClick={() =>
-                    changeTheme(news.theme === 'dark' ? 'light' : 'dark')
-                  }
-                  className={`circle-${news.theme === 'dark' ? 'light' : 'dark'}`}
-                />
-              </div>
-              <span>Change color</span>
-            </Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+// Create global promise and main roles
 mongoose.Promise = global.Promise;
 
 const db = {};

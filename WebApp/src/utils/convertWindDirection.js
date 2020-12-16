@@ -20,7 +20,7 @@ const cardinalDirection = {
 };
 
 // Create iterator
-cardinalDirection[Symbol.iterator] = function() {
+cardinalDirection[Symbol.iterator] = function () {
   let properties = Object.keys(this),
     count = 0,
     isDone = false;

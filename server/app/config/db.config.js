@@ -1,5 +1,6 @@
+//Store DB details
 module.exports = {
-    HOST: "localhost",
-    PORT: 27017,
-    DB: "users_db"
-  };
+  HOST: "localhost",
+  PORT: 27017,
+  DB: "users_db"
+};

@@ -15,9 +15,9 @@ let newsApiKey;
 
 //newsApi key
 if (process.env.NODE_ENV !== 'production') {
-  newsApiKey="2074f3fdd61247d89814daa1745d49b5";
+  newsApiKey = "2074f3fdd61247d89814daa1745d49b5";
 } else {
- newsApiKey="2074f3fdd61247d89814daa1745d49b5";
+  newsApiKey = "2074f3fdd61247d89814daa1745d49b5";
 }
 
 // Set Theme

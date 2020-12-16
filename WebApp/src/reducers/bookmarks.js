@@ -7,7 +7,7 @@ import {
 const initialState = {
   bookmarkItems: []
 };
-
+// Reducer file manages the current state of bookmark
 export default (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {

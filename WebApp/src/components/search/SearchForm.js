@@ -5,7 +5,7 @@ import Spinner from '../layout/Spinner';
 import SearchGeo from './SearchGeo';
 import SearchZip from './SearchZip';
 import classnames from 'classnames';
-
+// searches for the current location by zipcode with forcasts
 class SearchForm extends Component {
   state = {
     zipcode: '',
@@ -32,8 +32,7 @@ class SearchForm extends Component {
     try {
       if (this.state.coordinates) {
         const res = await axios.get(
-          `https://api.openweathermap.org/data/2.5/forecast?lat=${
-            coordinates.latitude
+          `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.latitude
           }&lon=${coordinates.longitude}&appid=7ec4719c8fca5b9800a651e5991ca88d`
         );
 
@@ -101,27 +100,27 @@ class SearchForm extends Component {
                 {loading ? (
                   <Spinner />
                 ) : (
-                  <form
-                    className="form-inline py-2"
-                    onSubmit={this.getWeather.bind(this, dispatch)}
-                  >
-                    <div className="form-group">
-                      <div className="input-group">
-                        <SearchGeo
-                          findGeolocation={this.findGeolocation.bind(
-                            this,
-                            dispatch
-                          )}
-                        />
-                        <SearchZip
-                          value={this.state.zipcode}
-                          onChange={this.onChange}
-                          onResetClick={this.onResetClick.bind(this, dispatch)}
-                        />
+                    <form
+                      className="form-inline py-2"
+                      onSubmit={this.getWeather.bind(this, dispatch)}
+                    >
+                      <div className="form-group">
+                        <div className="input-group">
+                          <SearchGeo
+                            findGeolocation={this.findGeolocation.bind(
+                              this,
+                              dispatch
+                            )}
+                          />
+                          <SearchZip
+                            value={this.state.zipcode}
+                            onChange={this.onChange}
+                            onResetClick={this.onResetClick.bind(this, dispatch)}
+                          />
+                        </div>
                       </div>
-                    </div>
-                  </form>
-                )}
+                    </form>
+                  )}
               </div>
             </div>
           );

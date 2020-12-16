@@ -20,11 +20,11 @@ export default class Login extends Component {
   }
 
   deleteMyAcc(event) {
-     if(window.confirm("Are you sure want to delete your account?")){
-        axios.delete("http://localhost:8001/api/user/delete?id="+JSON.parse(localStorage.getItem("user")).id ).then((data) => localStorage.removeItem("user"))
-        AuthService.logout();
-        window.location.replace("/");
-      }
+    if (window.confirm("Are you sure want to delete your account?")) {
+      axios.delete("http://localhost:8001/api/user/delete?id=" + JSON.parse(localStorage.getItem("user")).id).then((data) => localStorage.removeItem("user"))
+      AuthService.logout();
+      window.location.replace("/");
+    }
   }
 
   handleInputChange(event) {
@@ -102,19 +102,19 @@ export default class Login extends Component {
           >
             <div className="form-group prefMainDiv">
               <div className="prefHead"><h3>Catagory Preference List</h3></div>
-              
-                <div class="checkSection">
-                  
-                  <div class="checkboxClass"><input type="checkbox" name="Business" catName="Business" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("Business")} /> <label>Business</label></div>
-                  <div class="checkboxClass"><input type="checkbox" name="Entertainment" catName="Entertainment" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("Entertainment")} /> <label>Entertainment</label></div>
-                  <div class="checkboxClass"><input type="checkbox" name="General" catName="General" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("General")} /> <label>General</label></div>
-                  <div class="checkboxClass"><input type="checkbox" name="Health" catName="Health" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("Health")} /> <label>Health</label></div>
-               
-                  <div class="checkboxClass"><input type="checkbox" name="Science" catName="Science" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("Science")} /> <label>Science</label></div>
-                  <div class="checkboxClass"><input type="checkbox" name="Sports" catName="Sports" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("Sports")} /> <label>Sports</label></div>
-                  <div class="checkboxClass"><input type="checkbox" name="Technology" catName="Technology" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("Technology")} /> <label>Technology</label></div>
-                </div>
-              
+
+              <div class="checkSection">
+
+                <div class="checkboxClass"><input type="checkbox" name="Business" catName="Business" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("Business")} /> <label>Business</label></div>
+                <div class="checkboxClass"><input type="checkbox" name="Entertainment" catName="Entertainment" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("Entertainment")} /> <label>Entertainment</label></div>
+                <div class="checkboxClass"><input type="checkbox" name="General" catName="General" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("General")} /> <label>General</label></div>
+                <div class="checkboxClass"><input type="checkbox" name="Health" catName="Health" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("Health")} /> <label>Health</label></div>
+
+                <div class="checkboxClass"><input type="checkbox" name="Science" catName="Science" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("Science")} /> <label>Science</label></div>
+                <div class="checkboxClass"><input type="checkbox" name="Sports" catName="Sports" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("Sports")} /> <label>Sports</label></div>
+                <div class="checkboxClass"><input type="checkbox" name="Technology" catName="Technology" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("Technology")} /> <label>Technology</label></div>
+              </div>
+
             </div>
             <div className="form-group prefMainDiv">
               <div className="prefHead"><h3>Country Preference List</h3></div>
@@ -144,7 +144,7 @@ export default class Login extends Component {
                 </button>
               </div>
             </div>
-            
+
           </Form>
           <div className="form-group newsButtons"><button onClick={this.deleteMyAcc}
             className="btn btn-primary btn-block"

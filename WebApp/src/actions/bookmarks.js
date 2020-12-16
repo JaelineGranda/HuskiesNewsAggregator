@@ -1,6 +1,6 @@
 import { BOOKMARK_ITEM, UNBOOKMARK_ITEM, GET_BOOKMARK_ITEMS } from './types';
 import axios from "axios";
-
+// This function bookmarks the item and stores in database
 export const bookmarkItem = item => (dispatch, getState) => {
   const { bookmarkItems } = getState().bookmarks;
   localStorage.setItem('bookmarks', JSON.stringify([item, ...bookmarkItems]));
@@ -12,7 +12,7 @@ export const bookmarkItem = item => (dispatch, getState) => {
     payload: item
   });
 };
-
+// This function unbookmarks the item and stores in database
 export const unBookmarkItem = item => (dispatch, getState) => {
   const { bookmarkItems } = getState().bookmarks;
   const newBookmarkItems = bookmarkItems.filter(
@@ -27,7 +27,7 @@ export const unBookmarkItem = item => (dispatch, getState) => {
     payload: item
   });
 };
-
+// This function gets all items that rae bookmarked and stores in database
 export const getBookmarkItems = () => {
   let bookmarkItems = localStorage.getItem('bookmarks');
   if (bookmarkItems === null || bookmarkItems === "") {

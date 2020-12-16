@@ -2,7 +2,7 @@ import React from 'react';
 import { Consumer } from '../../context';
 import Spinner from '../layout/Spinner';
 import classnames from 'classnames';
-
+// header of the web app
 const Header = () => {
   return (
     <Consumer>
@@ -20,12 +20,12 @@ const Header = () => {
               {loading ? (
                 <Spinner color="text-white" />
               ) : (
-                <h1 className="display-4 text-white" >
-                  <strong>
-                    {city ? `${city}, ${country}` : 'Weather Conditions'}
-                  </strong>
-                </h1>
-              )}
+                  <h1 className="display-4 text-white" >
+                    <strong>
+                      {city ? `${city}, ${country}` : 'Weather Conditions'}
+                    </strong>
+                  </h1>
+                )}
             </div>
           </div>
         );

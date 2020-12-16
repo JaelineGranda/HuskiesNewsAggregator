@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import NewsItem from './../components/NewsItem';
-
+// Holds layout of bookmark page
 const Bookmarks = ({ bookmarkItems, theme }) => {
   return (
     <Fragment>
@@ -24,8 +24,8 @@ const Bookmarks = ({ bookmarkItems, theme }) => {
                   You have {bookmarkItems.length} Bookmarks(s)
                 </Fragment>
               ) : (
-                <Fragment> {bookmarkItems.length} Bookmarks(s)</Fragment>
-              )}
+                  <Fragment> {bookmarkItems.length} Bookmarks(s)</Fragment>
+                )}
             </p>
           </Col>
         </Row>
