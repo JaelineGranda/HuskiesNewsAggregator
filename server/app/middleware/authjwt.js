@@ -5,13 +5,16 @@ const db = require("../models");
 const User = db.user;
 const Role = db.role;
 
+// sets token
 verifyToken = (req, res, next) => {
   let token = req.headers["x-access-token"];
 
+  // if no token has been created
   if (!token) {
     return res.status(403).send({ message: "No token provided!" });
   }
 
+  // checks token authorization
   jwt.verify(token, config.secret, (err, decoded) => {
     if (err) {
       return res.status(401).send({ message: "Unauthorized!" });

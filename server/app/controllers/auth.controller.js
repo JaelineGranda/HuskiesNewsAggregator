@@ -7,7 +7,6 @@ const { user } = require("../models");
 const User = db.user;
 const Role = db.role;
 
-
 exports.getPref = (req, res) => {
   var id = req.query.id
   debugger;
@@ -43,9 +42,9 @@ exports.update = (req, res) => {
 // creates new user in database
 exports.signup = (req, res) => {
   const user = new User({
-    username: req.body.username,
-    email: req.body.email,
-    password: bcrypt.hashSync(req.body.password, 8)
+    username: req.body.username, // requests username
+    email: req.body.email, // requests email
+    password: bcrypt.hashSync(req.body.password, 8) // requests hidden password
   });
 
   user.save((err, user) => {
@@ -54,7 +53,7 @@ exports.signup = (req, res) => {
       return;
     }
 
-    if (req.body.roles) {
+    if (req.body.roles) { // finds roles
       Role.find(
         {
           name: { $in: req.body.roles }
@@ -138,11 +137,12 @@ exports.signin = (req, res) => {
     });
 };
 
+// deletes user account
 exports.delete = (req, res) => {
   User.findByIdAndRemove(req.query.id).then((data) => {
-    if (!data) {
+    if (!data) { // if data cannot be found for user
       res.status(404).send({
-        message: `Cannot delete User with id=${req.query.id}. Maybe Tutorial was not found!`
+        message: `Cannot delete User with id=${req.query.id}. User was not found!`
       });
     } else {
       res.send({
