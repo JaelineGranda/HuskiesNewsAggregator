@@ -114,7 +114,7 @@ export default class Login extends Component {
                 <div class="checkSection">
                   
                   <div class="checkboxClass"><input type="checkbox" name="Business" catName="Business" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("Business")} /> <label>Business</label></div>
-                  <div class="checkboxClass"><input type="checkbox" name="Entertaiment" catName="Entertaiment" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("Entertaiment")} /> <label>Entertaiment</label></div>
+                  <div class="checkboxClass"><input type="checkbox" name="Entertainment" catName="Entertainment" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("Entertainment")} /> <label>Entertainment</label></div>
                   <div class="checkboxClass"><input type="checkbox" name="General" catName="General" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("General")} /> <label>General</label></div>
                   <div class="checkboxClass"><input type="checkbox" name="Health" catName="Health" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("Health")} /> <label>Health</label></div>
                
