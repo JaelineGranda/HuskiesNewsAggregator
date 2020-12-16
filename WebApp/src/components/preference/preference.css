@@ -1,4 +1,17 @@
-/* .checkSection {
-  display: inline-block;
-} */
+.checkSection {
+  display: flex;
+  position: relative;
+}
+.slider.round {
+  border-radius: 34px;
+}
 
+.slider.round:before {
+  border-radius: 50%;
+}
+.checkboxClass label {
+  margin: 0px 20px 0px 3px;
+}
+.checkboxClass before {
+  color: black;
+}

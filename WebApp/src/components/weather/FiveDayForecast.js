@@ -20,10 +20,10 @@ class FiveDayForecast extends Component {
           return (
             <Fragment>
               {isOpen && (
-                <div className="card card-body bg-info">
+                <div className="card card-body">
                   <div className="row">
                     <div className="col-11 mx-auto">
-                      <div className="card card-body">
+                      <div className="card-body">
                         <h4 className="text-center m-0">5-Day Forecast</h4>
                         <FiveDayDisplay forecast={dailyForecast} />
                       </div>

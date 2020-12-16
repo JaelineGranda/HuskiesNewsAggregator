@@ -27,10 +27,10 @@ class CurrentWeather extends Component {
           return (
             <Fragment>
               {isOpen && (
-                <div className="card card-body bg-secondary">
+                <div className="card card-body">
                   <div className="row">
                     <div className="col-sm-7 mx-auto">
-                      <div className="card card-body">
+                      <div className="card-body">
                         <h4 className="text-center m-0 p-0">
                           <Moment format="MMMM Do YYYY" />
                         </h4>

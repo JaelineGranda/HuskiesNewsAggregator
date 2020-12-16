@@ -53,21 +53,21 @@ export default class Stock extends React.Component {
     return (
       <div class="container">
         <div class="row no-gutters">
-          <div class="col">
+          <div class="col stockHeader">
             <div class="d-flex flex-column mt-3">
               
                 <div class="card-body text-white text-center">
                   <h1 className="display-4"><strong> Stock Market for {this.state.stockSymbol}</strong></h1>
                 </div>
               </div>
-              <div className="border border-light p-2">
+              <div>
                 <div className="d-flex flex-row justify-content-center">
                   <form className="form-inline py-2">
                     <div className="form-group">
                       <h3>
-                        <div className="text-center">
+                        <div className="text-center whiteLabel">
                           <div className="row">
-                            <label className="text-secondary">Company Name: </label>
+                            <label>Company Name: </label>
 
                             <div className="col-md-6">
                               <div className="input-group">
@@ -89,7 +89,7 @@ export default class Stock extends React.Component {
               </div>
               <div className="text-center">
                 <h4>< a href={"http://eoddata.com/symbols.aspx"} target='blank' className="text-white">Click here to view more stock symbols</a></h4></div>
-              <div className="card-absolute card-body bg-secondary text-dark">
+              <div className="card-body  text-dark">
                 <div className="d-flex justify-content-center">
                   <Plot
                     data={[

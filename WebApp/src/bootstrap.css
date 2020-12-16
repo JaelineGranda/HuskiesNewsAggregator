@@ -2471,9 +2471,8 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary {
-  color: #212529;
-  background-color: #97c5e0;
-  border-color: #97c5e0;
+  color: white;
+  background-color: black;
 }
 .btn-primary:hover {
   color: #212529;
@@ -2505,7 +2504,7 @@ fieldset:disabled a.btn {
 
 .btn-secondary {
   color: #fff;
-  background-color: #6c757d;
+  background-color: black;
   border-color: #6c757d;
 }
 .btn-secondary:hover {
@@ -2733,9 +2732,8 @@ fieldset:disabled a.btn {
 .show > .btn-dark.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);
 }
-
 .btn-outline-primary {
-  color: #97c5e0;
+  color: black;
   border-color: #97c5e0;
 }
 .btn-outline-primary:hover {
@@ -4408,14 +4406,28 @@ input[type="button"].btn-block {
 .navbar-dark .navbar-text a:focus {
   color: #fff;
 }
-
+.loginCompo
+{
+  background-color: rgba(0, 0, 0, .2) !important;
+  margin: 50px;
+}
+.innerFormLogin{
+  margin:50px;
+}
+.weatherBox{
+  background-color: white;
+}
+.stockHeader{
+  background-color: rgba(0, 0, 0, .2);
+  height: 750px;
+}
 .card {
   position: relative;
   display: flex;
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: lightslategray;
+  background-color: rgba(0, 0, 0, .4);
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
@@ -4449,6 +4461,7 @@ input[type="button"].btn-block {
 }
 
 .card-body {
+  color: white;
   flex: 1 1 auto;
   padding: 1.25rem;
 }
@@ -9784,11 +9797,17 @@ button.bg-dark:focus {
 .text-right {
   text-align: right !important;
 }
-
-.text-center {
+.blackLabel{
+  color: black;
   text-align: center !important;
 }
-
+.text-center {
+  color: white;
+  text-align: center !important;
+}
+ .whiteLabel{
+   color: white;
+ }
 @media (min-width: 576px) {
   .text-sm-left {
     text-align: left !important;

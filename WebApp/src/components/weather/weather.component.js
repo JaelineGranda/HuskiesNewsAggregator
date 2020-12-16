@@ -28,7 +28,7 @@ export default class Weather extends Component {
     return (
       <Provider>
       <div className="App">
-        <div className="container">
+        <div className="container stockHeader">
           <div className="row no-gutters">
             <div className="col">
               <div className="d-flex flex-column mt-3">
