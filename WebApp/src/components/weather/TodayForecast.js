@@ -15,10 +15,10 @@ class TodayForecast extends Component {
           return (
             <Fragment>
               {isOpen && (
-                <div className="card card-body bg-warning">
+                <div className="card card-body">
                   <div className="row">
                     <div className="col-11 mx-auto">
-                      <div className="card card-body">
+                      <div className="">
                         <h4 className="text-center m-0">12-Hour Forecast</h4>
                         <TodayDisplay forecast={todayForecast} />
                       </div>

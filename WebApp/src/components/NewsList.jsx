@@ -9,13 +9,13 @@ import NewsItem from './NewsItem';
 const NewsList = ({ newsItems, loading, newsItemsTotal, theme, loadMore }) => {
   return (
     <Container>
-      {newsItemsTotal !== null && !loading ? (
+      {/* {newsItemsTotal !== null && !loading ? (
         <Row fluid className={`heroContainer-${theme} newsTitleContainer`}>
           <Col xs={12} sm={12}>
            
           </Col>
         </Row>
-      ) : null}
+      ) : null} */}
 
       {newsItemsTotal !== null && (
         <Row className='justify-content-md-center mb-4'>

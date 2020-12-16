@@ -130,7 +130,8 @@ export default class Register extends Component {
   render() {
     return (
       <div className="col-md-12">
-        <div className="card card-container">
+        <div className="card card-container loginCompo">
+        <div className="innerFormLogin">
           <img
             src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png"
             alt="profile-img"
@@ -208,6 +209,7 @@ export default class Register extends Component {
               }}
             />
           </Form>
+          </div>
         </div>
       </div>
     );
