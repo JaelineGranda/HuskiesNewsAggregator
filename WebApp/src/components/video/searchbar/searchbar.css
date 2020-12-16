@@ -1,6 +1,8 @@
-.search-bar ui segment {
+.search-bar {
     text-align: "center";
+    margin-left: 550px;
 }
-label {
-    padding-right: 20px;
+
+.logo {
+    margin-left: 270px;
 }

@@ -17,12 +17,11 @@ class Searchbar extends React.Component {
         
         return (
             <>
-            <h2><img style={{width:'200px', height:'100px',justifyContent:'center'}} className="logo" src='https://www.thatitguy.net/wp-content/uploads/2018/08/1280px-Logo_of_YouTube_2015-2017.svg.png' alt="youtube logo"></img></h2>
+            <h2 className="logo"><img style={{width:'200px', height:'100px',justifyContent:'center'}} className="logo" src='https://www.thatitguy.net/wp-content/uploads/2018/08/1280px-Logo_of_YouTube_2015-2017.svg.png' alt="youtube logo"></img></h2>
             <br></br>
             <div className='search-bar ui segment'>
                 <form onSubmit={this.handleSubmit} className='ui form'>
                     <div className='field'>
-                        <label htmlFor="video-search">Video Search</label>
                         <input onChange={this.handleChange} name='video-search' type="text" placeholder="Search.."/>
                     </div>
                 </form>

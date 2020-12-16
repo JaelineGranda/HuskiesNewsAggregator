@@ -26,11 +26,11 @@ class Video extends React.Component {
 
     render() {
         return (
-            <div className='ui container' style={{marginTop: '1em'}}>
+            <div className='ui-container' style={{marginTop: '1em'}}>
                 <SearchBar handleFormSubmit={this.handleSubmit}/>
                 <div className='ui grid'>
                     <div className="ui row">
-                        <div className="eleven wide column">
+                        <div className="videoList">
                             <VideoDetail video={this.state.selectedVideo}/>
                         </div>
                         <div className="five wide column">
