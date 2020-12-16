@@ -12,7 +12,6 @@ import { TwitterShareButton, TwitterIcon } from "react-share";
 import { FacebookShareButton, FacebookIcon } from "react-share";
 import { RedditShareButton, RedditIcon  } from "react-share";
 import { EmailShareButton, EmailIcon } from "react-share";
-import { PinterestShareButton, PinterestIcon} from "react-share";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -27,7 +26,7 @@ const NewsItem = ({
   facebook
 }) => {
   // if item is bookmarked find bookmark title
-  const isBookmark = item => {
+  const isBookmark = item => {              // finds the title of the news
     if (bookmarkItems !== null) {
       return (
         bookmarkItems.findIndex(bookmark => bookmark.title === item.title) > -1
@@ -46,9 +45,9 @@ const NewsItem = ({
 
   
 
-  return (
+  return (  //  adds scroll efefect from aos library
     <Col xs={12} sm={6} md={6} lg={4} xl={4} className='my-2 cardContainer'>
-      <Card data-aos="fade-up">
+      <Card data-aos="fade-up">       
         {item.urlToImage ? (
           <div
             className='urlImage'
@@ -60,12 +59,12 @@ const NewsItem = ({
             style={{ backgroundImage: `url(${NewsDefaultImage})` }}
           />
         )}
-
-        <Card.Body>
-          <Card.Title>
+                             
+        <Card.Body>            {/*card body contains 2 lines from title 3 lines from description from all the news */}
+          <Card.Title>  
             <Truncate lines={2} ellipsis={<span>...</span>}>
-              {item.title}
-            </Truncate>
+              {item.title}      
+            </Truncate> 
           </Card.Title>
           <Card.Subtitle className='mb-2 text-muted'>
             {item.source.name} <br />
@@ -85,20 +84,22 @@ const NewsItem = ({
               size='1.5em'
               onClick={() => unBookmark(item)}
             />
-          ) : (
+          ) : (                                                  //bookmark btn 
             <FaRegBookmark
               className='float-right mt-2 icon-button'
               size='1.5em'
               onClick={() => bookmark(item)}
             />
           )}
+
+          {/*each individual card body has a footer which has social media icons */ }
         </Card.Body>
         <Card.Footer>
-          <small className='text-muted'>
-            Published: <Moment format='YYYY/MM/DD' date={item.publishedAt} />
+          <small className='text-muted'>          
+            Published: <Moment format='YYYY/MM/DD' date={item.publishedAt} /> 
             <br>
             </br>
-            < FacebookShareButton url={item.url}>
+            < FacebookShareButton url={item.url}> 
               <FacebookIcon logoFillColor="white" size ={33} round/>
                 </FacebookShareButton>
                 < TwitterShareButton url={item.url}>
@@ -107,7 +108,7 @@ const NewsItem = ({
                 < RedditShareButton url={item.url}>
               <RedditIcon logoFillColor="white" size ={33} round/>
                 </ RedditShareButton>
-               
+                
                 
                 < EmailShareButton url={item.url}>
               <EmailIcon logoFillColor="white" size ={33} round/>

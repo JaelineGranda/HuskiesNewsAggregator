@@ -1,5 +1,3 @@
-const KEY = 'AIzaSyDvwjDqeXib2FbxJO0kh8o2oK_1hWEiIbU'; // youtube API key here
-
 export const config = {
     baseURL: 'https://www.googleapis.com/youtube/v3',
     params: {
