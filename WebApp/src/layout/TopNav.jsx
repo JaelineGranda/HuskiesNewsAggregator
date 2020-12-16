@@ -67,7 +67,7 @@ const TopNav = ({ news, changeTheme }) => {
                 <Nav.Link to="/" onClick={logout} activeClassName='active' as={NavLink} className="button_sign"><li>
                 Logout
                 </li></Nav.Link>}
-            <Nav.Link className="switchContainer">
+            {/* <Nav.Link className="switchContainer">
               <div>
                 <div className="switchBtn"
                   onClick={() =>
@@ -77,7 +77,7 @@ const TopNav = ({ news, changeTheme }) => {
                 />
               </div>
               <span>Change color</span>
-            </Nav.Link>
+            </Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

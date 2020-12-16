@@ -45,7 +45,7 @@ export const setTheme = () => {
 
 // Change theme
 export const changeTheme = theme => {
-  localStorage.setItem('theme', theme);
+  localStorage.setItem('theme', "light");
   if (theme === 'dark') {
     document.body.style.backgroundColor = '#ccc';
   } else {

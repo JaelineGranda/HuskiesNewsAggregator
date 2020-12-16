@@ -2,6 +2,7 @@
     position: absolute;
     padding-top: 47px;
     font-size: 10px;
+    color: black;
 }
 
 .nav-link{
@@ -21,7 +22,7 @@
 }
 
 #responsive-navbar-nav > div{
-    width: 70%;
+    width: 72%;
 }
 
 .switchContainer{

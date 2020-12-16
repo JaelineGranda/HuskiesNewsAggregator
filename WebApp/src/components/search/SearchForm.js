@@ -91,10 +91,9 @@ class SearchForm extends Component {
       <Consumer>
         {value => {
           const { dispatch, error, loading } = value;
-
           return (
             <div
-              className={classnames('border border-primary p-2', {
+              className={classnames('border border-primary p-2 weatherBox', {
                 'border-danger': error
               })}
             >
