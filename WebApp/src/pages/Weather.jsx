@@ -5,7 +5,7 @@ import SearchForm from './components/search/SearchForm';
 import WeatherDashboard from './components/weather/WeatherDashboard';
 import Footer from './components/layout/Footer';
 
-import './scss/bootstrap.scss';
+import './scss/main.scss';
 
 const Weather = () => {
   return (

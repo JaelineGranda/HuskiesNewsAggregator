@@ -5,8 +5,7 @@ import SearchForm from '../search/SearchForm';
 import WeatherDashboard from './WeatherDashboard';
 import Footer from '../layout/Footer';
 
-import '../../scss/bootstrap.scss';
-import '../../scss/App.scss';
+import '../../scss/main.scss';
 
 // checks if required value is left blank
 // const required = value => {
