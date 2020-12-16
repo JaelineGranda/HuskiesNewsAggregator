@@ -5,25 +5,21 @@ import SearchForm from '../search/SearchForm';
 import WeatherDashboard from './WeatherDashboard';
 import Footer from '../layout/Footer';
 
-import '../../bootstrap.scss';
-import '../../App.scss';
+import '../../scss/bootstrap.scss';
+import '../../scss/App.scss';
 
 // checks if required value is left blank
-const required = value => {
-  if (!value) {
-    return (
-      <div className="alert alert-danger" role="alert">
-        This field is required!
-      </div>
-    );
-  }
-};
+// const required = value => {
+//   if (!value) {
+//     return (
+//       <div className="alert alert-danger" role="alert">
+//         This field is required!
+//       </div>
+//     );
+//   }
+// };
 
 export default class Weather extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <Provider>

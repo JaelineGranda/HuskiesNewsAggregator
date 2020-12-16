@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import Form from "react-validation/build/form";
-import Input from "react-validation/build/input";
-import CheckButton from "react-validation/build/button";
 import "./preference.scss";
 import AuthService from "../../services/auth.service";
 import axios from 'axios';
@@ -65,8 +63,8 @@ export default class Login extends Component {
 
   handleSave(e) {
     e.preventDefault();
-    var catlist = new Array();
-    var countryList = new Array();
+    var catlist = [];
+    var countryList = [];
     var catagory = document.getElementsByClassName("catagory");
     for (var i = 0; i < catagory.length; i++) {
       if (catagory.item(i).checked) {
@@ -75,9 +73,9 @@ export default class Login extends Component {
     }
     localStorage.setItem('userCat', catlist);
     var country = document.getElementsByClassName("country");
-    for (var i = 0; i < country.length; i++) {
-      if (country.item(i).checked) {
-        countryList.push(country.item(i).getAttribute("cntrName"));
+    for (var j = 0; j < country.length; j++) {
+      if (country.item(j).checked) {
+        countryList.push(country.item(j).getAttribute("cntrName"));
       }
     }
     axios.put("http://localhost:8001/api/user/update", { "id": JSON.parse(localStorage.getItem("user")).id, "categories": catlist, "countries": countryList })
