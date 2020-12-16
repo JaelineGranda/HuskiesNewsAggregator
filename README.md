@@ -75,36 +75,36 @@ Anusha Chandrakanth Lingadahalli - (001007696)
 
 1. You need to have node.js and npm installed on your machine. Once installed, you can check the versions using the below 
 
-commands
-node -v
-npm -v
+* commands
+* node -v
+* npm -v
 
 2. Clone the project from GitHub Repository and Install all the necessary packages
 
-git clone https://github.com/neu-mis-info6150-fall-2020/final-project-web-huskies.git 
-cd server
-npm install
+* git clone https://github.com/neu-mis-info6150-fall-2020/final-project-web-huskies.git 
+* cd server
+* npm install
 
 3. Start node.js server
 
-node server.js
+* node server.js
 
 4. Start REST API server
-npm serve
+* npm serve
 
 5. Start Mongo server
 
-In one shell run
-mongod.exe
-In another shell run
-mongo
+* In one shell run
+* mongod.exe
+* In another shell run
+* mongo
 
 6. Build and start WebApp
-cd WebApp
-npm run build
-npm run start
+* cd WebApp
+* npm run build
+* npm run start
 
-Open your browser and go to http://localhost:8081/  to see our website up and running
+* Open your browser and go to http://localhost:8081/  to see our website up and running
 
 
 [![Times-of-Huskies.png](https://i.postimg.cc/yxJrbrfH/Times-of-Huskies.png)](https://postimg.cc/9whp4158)

@@ -19,7 +19,7 @@ class FiveDayForecast extends Component {
 
           return (
             <Fragment>
-              {isOpen && (
+              {isOpen && (    // displays the last 5 day weather 
                 <div className="card card-body">
                   <div className="row">
                     <div className="col-11 mx-auto">

@@ -4,8 +4,12 @@ import { setTopNews, clearTopNews } from '../actions/news';
 import NewsList from '../components/NewsList';
 import { connect } from 'react-redux';
 
+<<<<<<< HEAD
 // sets homepagewith tops news
 const Home = ({ setTopNews, news, clearTopNews }) => {
+=======
+const Home = ({ setTopNews, news, clearTopNews }) => {         // fucntions for the homescreen
+>>>>>>> 6c2dac2f49286b5ac2e48e57d1e3a7e00d83dc3d
   const [page, setPage] = useState(1);
   const [categorySourceUrl, setCategorySourceUrl] = useState('');
   const [isSearch, setIsSearch] = useState(false);
@@ -25,6 +29,7 @@ const Home = ({ setTopNews, news, clearTopNews }) => {
       const url = `${categorySourceUrl}`;
       setTopNews(url, page);
     }
+
 
     if(!categorySourceUrl) {
       let url1 = `http://newsapi.org/v2/everything?q=usa&sortBy=publishedAt&apiKey=2074f3fdd61247d89814daa1745d49b5`;
