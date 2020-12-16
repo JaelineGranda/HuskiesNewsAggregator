@@ -19,7 +19,7 @@ export default class Stock extends React.Component {
   handleClick() {
     this.fetchStock();
   }
-
+// fetch stocks from API call
   fetchStock() {
     const pointerToThis = this;
     const API_KEY = "SLIIE11N2DCT0QUM";
@@ -48,7 +48,9 @@ export default class Stock extends React.Component {
         });
       });
   }
-
+/* rendering the stocks of company by their name code 
+ search the company name code here to get the stocks chart
+ stock market chart as per the given company code is ploted */
   render() {
     return (
       <div class="container">
@@ -71,7 +73,7 @@ export default class Stock extends React.Component {
 
                             <div className="col-md-6">
                               <div className="input-group">
-
+                            
                                 <input type="text" className="form-control" placeholder="Search..." onChange={(e) => this.setState({ stockSymbol: e.target.value })} ></input>
                                 <div className="input-group-append">
                                   <button type="button" class="btn btn-secondary" onClick={this.handleClick}>Search
@@ -108,8 +110,6 @@ export default class Stock extends React.Component {
             </div>
           </div>
         </div >
-     
-
     );
   }
 }
