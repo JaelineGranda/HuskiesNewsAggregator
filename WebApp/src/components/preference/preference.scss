@@ -2,6 +2,7 @@
   text-align: center;
   column-count: 2;
   column-gap: -100px;
+  display: inline-block;
 }
 .slider.round {
   border-radius: 34px;
@@ -11,8 +12,9 @@
   border-radius: 50%;
 }
 
-.checkboxClass before {
+.checkboxClass {
   color: black;
+  text-align: left;
 }
 .loginForm1 {
   background: white;

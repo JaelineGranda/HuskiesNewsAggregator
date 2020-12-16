@@ -104,19 +104,19 @@ export default class Login extends Component {
           >
             <div className="form-group">
               <div>Category</div>
-              <div>
+              
                 <div class="checkSection">
+                  
                   <div class="checkboxClass"><input type="checkbox" name="Business" catName="Business" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("Business")} /> <label>Business</label></div>
                   <div class="checkboxClass"><input type="checkbox" name="Entertaiment" catName="Entertaiment" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("Entertaiment")} /> <label>Entertaiment</label></div>
                   <div class="checkboxClass"><input type="checkbox" name="General" catName="General" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("General")} /> <label>General</label></div>
                   <div class="checkboxClass"><input type="checkbox" name="Health" catName="Health" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("Health")} /> <label>Health</label></div>
-                </div>
-                <div class="checkSection">
+               
                   <div class="checkboxClass"><input type="checkbox" name="Science" catName="Science" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("Science")} /> <label>Science</label></div>
                   <div class="checkboxClass"><input type="checkbox" name="Sports" catName="Sports" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("Sports")} /> <label>Sports</label></div>
                   <div class="checkboxClass"><input type="checkbox" name="Technology" catName="Technology" class="catagory" onChange={this.handleInputChange} checked={this.handleCheck("Technology")} /> <label>Technology</label></div>
                 </div>
-              </div>
+              
             </div>
             <div className="form-group">
               <div>Country</div>
