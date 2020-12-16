@@ -4,7 +4,6 @@ import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import "./login.scss";
 import AuthService from "../../services/auth.service";
-import { FaTeeth } from "react-icons/fa";
 
 // checks if required value is left blank
 const required = value => {
